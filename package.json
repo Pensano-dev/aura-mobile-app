@@ -1,0 +1,16 @@
+{
+  "name": "aura",
+  "version": "1.0.0",
+  "description": "Blah blah blah... placeholder for introductory text.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd frontend && npm start",
+    "ios": "cd frontend && npm run ios",
+    "android": "cd frontend && npm run android",
+    "server": "cd backend && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
