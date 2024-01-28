@@ -36,6 +36,8 @@ Please add to this with any issues that you think others may need to be aware of
 
 * Opening the Aura app with automatic opening of the iOS Simulator worked seemlessly on a 2014 MacBook Air but opening the simulator for the first time took around 4 mins! This clearly involved a lot of downloading and initialising. Subsequent openings were much quicker, around 17 seconds which still feels like a long time.
 
+* I have read that you need to have a version of Xcode Command Line Tools selected in Xcode Settings and none is selected by default. This was not the case for me but you might want to check by opening Xcode (no need to open a project) and go to Settings > Locations and check that a version of Xcode Command Line Tools is selected.
+
 ## Using the Xcode iOS Simulator with Aura
 
 This is all new to me so I can only tell of my experience so far as a complete beginner. I found the behaviour of starting a React Native app for iOS can be sketchy but seems to work most of the time. The first time I started the Aura app, it crashed, then without changing anything, it worked and automatically opened the iOS Simulator. The third time I tried it, it produced a QR code for use with a physical iPhone AND also opened the iOS Simulator. I have had no problems since.
