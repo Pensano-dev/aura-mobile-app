@@ -25,7 +25,7 @@ In the above, you would need to replace `/Users/pablojoyce/Library/Android/sdk` 
 
 ## Running the Android Virtual Device with Aura
 
-Unlike, iOS, I found that the Android Virtual Device (AVD) did not automatically open when running `npx run android`. I had to open the AVD Manager from the Android Studio welcome screen and then click the green play button to start the AVD. Once it was running, I could run `npx run android` and it would open the app in the AVD.
+Unlike, iOS, I found that the Android Virtual Device (AVD) did not always automatically open when running `npx run android`, although in theory it should. I had to open the AVD Manager from the Android Studio welcome screen and then click the green play button to start the AVD. Once it was running, I could run `npx run android` and it would open the app in the AVD.
 
 The first time I ran this on a 2014 MacBook Air, it took a few minutes to open the AVD. I needed to press a few buttons when prompted but it worked smoothly albeit slowly. As with iOS, subsequent openings were much quicker. Bare in mind that a 2014 MacBook Air is not exactly an ideal machine for this kind of dev work.
 
