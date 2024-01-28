@@ -2,9 +2,16 @@
 
 Blah blah blah... placeholder for introductory text.
 
-## Starting the app (frontend and backend) from the root directory
+## Setup
 
 Clone the app and run `npm install` in both the `frontend` and `backend` directories. 
+* Depending on your local setup , you may need to run `npm i -D nodemon` in the backend. It is in devDependencies in the package.json file, but people seem to have had issues with this in the past.
+* See the [Setting up your React Native (frontend) development environment](#setting-up-your-react-native-frontend-development-environment) section below for more information on setting up your React Native development environment.
+* You will need to create a `.env` file in the `backend` directory with the following variables:
+  `MONGODB_PW=tbc`
+
+## Starting the app (frontend and backend) from the root directory
+
 
 `npm run server` will start the backend server on localhost:8080. This will connect to the database on MongoDB Atlas (once it is set up).
 
