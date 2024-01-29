@@ -46,3 +46,9 @@ For debugging purposes, there is a `health` endpoint on the backend server.
 `http://localhost:8080/api/v1.0/health/db` should return a JSON object with the status `all good` which confirms that the server is running and that the database connection is good.
 
 A POST request to `http://localhost:8080/api/v1.0/health/db` with a `status` property in the body will add that entry to the database and return `{"message":"Health entry added successfully!"}`.
+
+## Links to documentation from the Athena Hackathon Team
+This app was a prize winner at the Athena Hackathon 2023 for the team comprising of Elsa Nafar, Juliana Nocchi, Tian Pan, Natasha Buckham and Sidra Iqbal. Here are some links to documentation the team produced during the hackathon:
+[Original Aura repo](https://github.com/natashabuckham/athena-hackathon-2023-aura-app)
+[Canva presentation](https://www.canva.com/design/DAFnaNSUH6c/3HwneJ2_axm4dUbXObnFIQ/view?utm_content=DAFnaNSUH6c&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1)
+[Figma designs](https://www.figma.com/file/YgPoK1QzFK9QRcrTwP2g2u/ambiance-t?type=design&node-id=0-1&mode=design&t=szCVSY9dUuXVDvqJ-0)
