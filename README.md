@@ -8,7 +8,7 @@ Clone the app and run `npm install` in both the `frontend` and `backend` directo
 * Depending on your local setup , you may need to run `npm i -D nodemon` in the backend. It is in devDependencies in the package.json file, but people seem to have had issues with this in the past.
 * See the [Setting up your React Native (frontend) development environment](#setting-up-your-react-native-frontend-development-environment) section below for more information on setting up your React Native development environment.
 * You will need to create a `.env` file in the `backend` directory with the following variables:
-  `MONGODB_PW=tbc`
+  `MONGODB_PW=<our MongoDB Atlas password>` (the actual password is shared privately with the group)
 
 ## Starting the app (frontend and backend) from the root directory
 
@@ -43,9 +43,11 @@ For debugging purposes, there is a `health` endpoint on the backend server.
 
 `http://localhost:8080/api/v1.0/health/server` should return a JSON object with the message `All is good with the server but I can't speak for the database.` which confirms that the server is running.
 
-`http://localhost:8080/api/v1.0/health/db` should return a JSON object with the status `all good` which confirms that the server is running and that the database connection is good.
+`http://localhost:8080/api/v1.0/health/db` should return a JSON object with the status `all is well` which confirms that the server is running and that the database connection is good.
 
 A POST request to `http://localhost:8080/api/v1.0/health/db` with a `status` property in the body will add that entry to the database and return `{"message":"Health entry added successfully!"}`.
+
+**NOTE:** There is a **Postman** Aura Workspace with a collection of requests for the backend server. 
 
 ## Links to documentation from the Athena Hackathon Team
 This app was a prize winner at the Athena Hackathon 2023 for the team comprising of Elsa Nafar, Juliana Nocchi, Tian Pan, Natasha Buckham and Sidra Iqbal. Here are some links to documentation the team produced during the hackathon:
