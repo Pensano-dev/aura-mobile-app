@@ -49,6 +49,16 @@ A POST request to `http://localhost:8080/api/v1.0/health/db` with a `status` pro
 
 **NOTE:** There is a **Postman** Aura Workspace with a collection of requests for the backend server. 
 
+## Database
+
+The MongoDB database is hosted on MongoDB Atlas. The connection string is stored in the `.env` file in the `backend` directory. The connection string can be found in the backend `app.js` file.
+
+There are three databases: `aura`, `aura-DEV` and `aura-TEST`. The development environment uses `aura-DEV` and please use `aura-TEST` for testing. The `aura` database is for production.
+
+At time of writing, the databases contain only a health collection as referenced in the [Backend server and health check](#backend-server-and-health-check) section above.
+
+The connection string for MongoDB Compass is `mongodb+srv://pensano-aura-db-user:<password>@cluster0.sylisri.mongodb.net/`, using the shared password.
+
 ## Links to documentation from the Athena Hackathon Team
 This app was a prize winner at the Athena Hackathon 2023 for the team comprising of Elsa Nafar, Juliana Nocchi, Tian Pan, Natasha Buckham and Sidra Iqbal. Here are some links to documentation the team produced during the hackathon:
 
