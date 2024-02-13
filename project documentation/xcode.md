@@ -6,13 +6,13 @@ Xcode is only available on macOS. Windows and Linux users should use Android Stu
 
 If you want fuller details on installing Xcode, you can read this article: [The Best and Fastest Ways to Install Xcode on your Mac](https://matteomanferdini.com/install-xcode/).
 
-#### Installing Xcode from the Mac App Store
+### Installing Xcode from the Mac App Store
 
 The easiest and longest way to install Xcode is through the Mac App Store. It can take ages and feel like it is stuck, but it will eventually finish... usually... eventually. I was sure mine had crashed but after half an hour of seeming to do nothing it finished.
 
 Unless you are using the latest Mac OS, the App Store may offer to install the latest version of Xcode that is compatible with your OS. This is fine.
 
-#### Installing Xcode from the Apple Developer website
+### Installing Xcode from the Apple Developer website
 
 On my 2010 MacBook Pro, the App Store would not install Xcode. I had to download it from the Apple Developer website. You will need to sign in with your Apple ID to download it.
 
@@ -22,7 +22,7 @@ Wikipedia has a page of slightly dubious information that will give you an idea 
 
 Whenever I have done this, I have downloaded a xip file that I have had to extract. I then had to move the extracted Xcode app to the Applications folder. There is a StackOverflow question that explains this [here](https://stackoverflow.com/questions/43663097/how-to-install-xcode-from-xip-file).
 
-#### Installing Xcode Command Line Tools
+### Installing Xcode Command Line Tools
 
 This seems to be the quickest and most complex way to install Xcode. I have never done it but there is a ton of information on the web about it if it is your preferred method, including in the article at the top of this page.
 
