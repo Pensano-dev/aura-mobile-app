@@ -2,6 +2,10 @@
 
 Blah blah blah... placeholder for introductory text.
 
+## Notes on development in React Native
+
+* It is important to look at the result in both iOS and Android simulators, as the layout can be strikingly different on different devices, particularly in regard to styling. Note that some styling properies are supported in iOS but not in Android, and vice versa.
+
 ## Setup
 
 Clone the app and run `npm install` in both the `frontend` and `backend` directories. 
