@@ -1,27 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import PlaceholderScreen from './src/screens/PlaceholderScreen';
+import AttributeSelectorScreen from './src/screens/AttributeSelectorScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.tempTitle}>AURA</Text>
-      <Text>Welcome to the Aura Mobile app</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={AttributeSelectorScreen}
+          options={{title: 'Welcome to Aura'}}
+        />
+        <Stack.Screen
+          name="Placeholder"
+          component={PlaceholderScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  tempTitle: {
-    fontSize: 70,
-    fontWeight: 'bold',
-    color: '#3377ff',
-  }
-
-});

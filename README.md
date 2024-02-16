@@ -71,3 +71,7 @@ This app was a prize winner at the Athena Hackathon 2023 for the team comprising
 [Canva presentation](https://www.canva.com/design/DAFnaNSUH6c/3HwneJ2_axm4dUbXObnFIQ/view?utm_content=DAFnaNSUH6c&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1)
 
 [Figma designs](https://www.figma.com/file/YgPoK1QzFK9QRcrTwP2g2u/ambiance-t?type=design&node-id=0-1&mode=design&t=szCVSY9dUuXVDvqJ-0)
+
+## Useful links for React Native development
+
+[React Native documentation](https://reactnative.dev/docs/getting-started)
