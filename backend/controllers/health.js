@@ -9,7 +9,7 @@ exports.getHealth = (req, res, next) => {
 };
 
 exports.getHealthEntry = (req, res, next) => {
-  Health.findOne({ status: "all good" }) 
+  Health.findOne({ status: "all is well" }) 
     .then(healthEntry => res.status(200).json(healthEntry))
     .catch(error => res.status(404).json({ error: error }));
 };
