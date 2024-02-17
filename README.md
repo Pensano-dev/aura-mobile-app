@@ -75,3 +75,7 @@ This app was a prize winner at the Athena Hackathon 2023 for the team comprising
 ## Useful links for React Native development
 
 [React Native documentation](https://reactnative.dev/docs/getting-started)
+
+[React Native Docs - Navigating between screens](https://reactnative.dev/docs/navigation) - This is what I (Pablo) used as reference when setting up the screens stack in App.js.
+
+[React Nagigation - Getting Started](https://reactnavigation.org/docs/getting-started/) - This is what I didn't but probably should have used as reference when setting up the screens stack in App.js.
