@@ -9,7 +9,7 @@ Blah blah blah... placeholder for introductory text.
 ## Setup
 
 Clone the app and run `npm install` in both the `frontend` and `backend` directories. 
-* Depending on your local setup , you may need to run `npm i -D nodemon` in the backend. It is in devDependencies in the package.json file, but people seem to have had issues with this in the past.
+* Depending on your local setup , you may need to run `npm i -D nodemon` in the backend. It is in devDependencies in the package.json file, but people seem to have had issues with this in the past. It is recommended by Nodemon to install it globally with `npm install -g nodemon`.
 * See the [Setting up your React Native (frontend) development environment](#setting-up-your-react-native-frontend-development-environment) section below for more information on setting up your React Native development environment.
 * You will need to create a `.env` file in the `backend` directory with the following variables:
   `MONGODB_PW=<our MongoDB Atlas password>` (the actual password is shared privately with the group)
