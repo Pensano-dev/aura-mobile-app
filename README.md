@@ -63,6 +63,22 @@ At time of writing, the databases contain only a health collection as referenced
 
 The connection string for MongoDB Compass is `mongodb+srv://pensano-aura-db-user:<password>@cluster0.sylisri.mongodb.net/`, using the shared password.
 
+## Testing
+
+### Running Unit and Integration Tests in the Backend
+
+`cd backend` to navigate to the backend directory.
+
+**IMPORTANT: When running any test that involves the database, please use the** `aura_TEST` **database by starting the server by running** `npm run start:test` **rather than the normal** `npm start`**, to preserve the** `aura_DEV` **database data.**
+
+To run ALL tests, run `npm test` in the `backend` directory. This will continuously run all backend tests until stopped with `Ctrl+C`.
+
+To run specific tests, run `npx jest <test file regex match>` in the `backend` directory. For example, to run the `userController.test.js` file, you could run `npx jest use`. If that pattern matches multiple files, just be more specific, e.g. `npx jest userCon`.
+
+To continuously run specific tests, run `npx jest --watch <test file regex match>`, e.g. `npx jest --watch userCon`.
+
+**NOTE:** Any tests running `App.js` tests will have a delay before ending due to the open database pool connection. This is expected behaviour.
+
 ## Links to documentation from the Athena Hackathon Team
 This app was a prize winner at the Athena Hackathon 2023 for the team comprising of Elsa Nafar, Juliana Nocchi, Tian Pan, Natasha Buckham and Sidra Iqbal. Here are some links to documentation the team produced during the hackathon:
 

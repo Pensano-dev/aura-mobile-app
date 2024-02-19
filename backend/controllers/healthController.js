@@ -8,30 +8,23 @@ exports.getHealth = (req, res, next) => {
   }
 };
 
-exports.getHealthEntry = (req, res, next) => {
-  // console.log('in getHealthEntry')
-  Health.findOne({ status: "all is well" }) 
-    .then(healthEntry => {
-      // console.log('found health entry')
-      console.log("Health Entry:", healthEntry);
-      res.status(200).json(healthEntry);
-    })
-    .catch(error => {
-      // console.log('error with health entry')
-      console.log("Error:", error);
-      res.status(500).json({ error: error });
-    });
-  // console.log('At the end of getHealthEntry')
+exports.getHealthEntry = async (req, res, next) => {
+  try {
+    const healthEntry = await Health.findOne({ status: "all is well" });
+    res.status(200).json(healthEntry);
+  } catch (error) {
+    next(error);
+  }
 };
 
-exports.addHealthEntry = (req, res, next) => {
+exports.addHealthEntry = async (req, res, next) => {
   const { status } = req.body;
-  const healthEntry = new Health({
-    status
-  });
-  healthEntry
-    .save()
-    .then(() =>
-      res.status(201).json({ message: 'Health entry added successfully!' })
-    );
+  const healthEntry = new Health({ status });
+  
+  try {
+    await healthEntry.save();
+    res.status(201).json({ message: 'Health entry added successfully!' });
+  } catch (error) {
+    next(error);
+  }
 };
