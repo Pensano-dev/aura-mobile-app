@@ -1,4 +1,4 @@
-const Health = require('../models/health');
+const Health = require('../models/healthModel');
 
 exports.getHealth = (req, res, next) => {
   try {
@@ -9,9 +9,19 @@ exports.getHealth = (req, res, next) => {
 };
 
 exports.getHealthEntry = (req, res, next) => {
+  // console.log('in getHealthEntry')
   Health.findOne({ status: "all is well" }) 
-    .then(healthEntry => res.status(200).json(healthEntry))
-    .catch(error => res.status(404).json({ error: error }));
+    .then(healthEntry => {
+      // console.log('found health entry')
+      console.log("Health Entry:", healthEntry);
+      res.status(200).json(healthEntry);
+    })
+    .catch(error => {
+      // console.log('error with health entry')
+      console.log("Error:", error);
+      res.status(500).json({ error: error });
+    });
+  // console.log('At the end of getHealthEntry')
 };
 
 exports.addHealthEntry = (req, res, next) => {

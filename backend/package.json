@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll --detectOpenHandles",
-    "start": "nodemon index.js",
+    "start": "MONGODB_DBNAME=aura_DEV nodemon index.js",
+    "start:test": "NODE_ENV=TEST nodemon index.js",
     "server": "nodemon index.js"
   },
   "keywords": [],

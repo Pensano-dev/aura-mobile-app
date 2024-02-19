@@ -8,5 +8,4 @@ const healthSchema = mongoose.Schema({
 
 module.exports = mongoose.model('Health', healthSchema);
 
-
 // This schema is a test schema to check if the database is connected.
