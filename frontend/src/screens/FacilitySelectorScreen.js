@@ -1,16 +1,20 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import FacilityComponent from '../components/FacilityComponent/FacilityComponent';
 
 export default FacilitySelectorScreen = ({ navigation }) => {
+
+  const facilityList = [
+    // incomplete list just to showcase the outcome 
+    { name: "Wifi", iconName: "wifi" },
+    { name: "No Bright Lights", iconName: "flashlight" },
+    { name: "Low Noise", iconName: "volume-mute" }
+  ];
+
   return (
-    <View>
-      <Text>
-        All content on this page is a placeholder for the Facility Selector
-        Screen, ticket #10, https://github.com/orgs/Pensano-dev/projects/2/views/1?pane=issue&itemId=53023152.
-      </Text>
-      <Text>
-        Feel free to delete all of this content when ready.
-      </Text>
-    </View>
+    <>
+      {facilityList.map((facility, index) => (
+        <FacilityComponent key={index} name={facility.name} iconName={facility.iconName} />
+      ))}
+    </>
   );
 };
