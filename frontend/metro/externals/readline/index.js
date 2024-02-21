@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:readline');
+module.exports = $$require_external("node:readline");

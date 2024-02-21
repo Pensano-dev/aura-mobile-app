@@ -1,20 +1,34 @@
-import React from 'react';
-import FacilityComponent from '../components/FacilityComponent/FacilityComponent';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import FacilityComponent from "../components/FacilityComponent/FacilityComponent";
 
 export default FacilitySelectorScreen = ({ navigation }) => {
-
   const facilityList = [
-    // incomplete list just to showcase the outcome 
+    // incomplete list just to showcase the outcome
     { name: "Wifi", iconName: "wifi" },
     { name: "No Bright Lights", iconName: "flashlight" },
-    { name: "Low Noise", iconName: "volume-mute" }
+    { name: "Low Noise", iconName: "volume-mute" },
   ];
 
   return (
-    <>
+    <View style={styles.container}>
       {facilityList.map((facility, index) => (
-        <FacilityComponent key={index} name={facility.name} iconName={facility.iconName} />
+        <FacilityComponent
+          key={index}
+          facilityName={facility.name}
+          iconName={facility.iconName}
+        />
       ))}
-    </>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+  },
+});

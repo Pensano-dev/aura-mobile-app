@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:perf_hooks');
+module.exports = $$require_external("node:perf_hooks");

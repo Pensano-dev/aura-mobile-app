@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:dgram');
+module.exports = $$require_external("node:dgram");

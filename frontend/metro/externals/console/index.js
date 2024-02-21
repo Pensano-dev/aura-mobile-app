@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:console');
+module.exports = $$require_external("node:console");

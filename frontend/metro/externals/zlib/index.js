@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:zlib');
+module.exports = $$require_external("node:zlib");

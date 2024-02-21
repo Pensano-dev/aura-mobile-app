@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:assert');
+module.exports = $$require_external("node:assert");

@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:process');
+module.exports = $$require_external("node:process");

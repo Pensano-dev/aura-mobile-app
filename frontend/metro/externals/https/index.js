@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:https');
+module.exports = $$require_external("node:https");

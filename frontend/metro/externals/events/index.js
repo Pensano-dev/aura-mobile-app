@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:events');
+module.exports = $$require_external("node:events");

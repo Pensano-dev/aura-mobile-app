@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:domain');
+module.exports = $$require_external("node:domain");
