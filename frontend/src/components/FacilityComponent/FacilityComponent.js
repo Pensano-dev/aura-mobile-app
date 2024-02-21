@@ -1,17 +1,14 @@
 import React from "react";
 import { Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-export const FacilityComponent = () => {
-
-  const facilityList = [
-    "Wifi", "No Bright Lights", "Low Noise"
-  ]
-  
-
-
+const FacilityComponent = ({ facilityName, iconName }) => {
   return (
-    <>
-      {/* Icon is a prop for the circle */}
-    </>
-  )
+    <View>
+      <Ionicons name={iconName} size={24} color="black" />
+      <Text>{facilityName}</Text>
+    </View>
+  );
 }
+
+export default FacilityComponent;
