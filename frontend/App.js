@@ -1,7 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import PlaceholderScreen from './src/screens/PlaceholderScreen';
-import AttributeSelectorScreen from './src/screens/AttributeSelectorScreen';
+import FacilitySelectorScreen from './src/screens/FacilitySelectorScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,13 +9,10 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
-          component={AttributeSelectorScreen}
-          options={{title: 'Welcome to Aura'}}
+          name="Facilities"
+          component={FacilitySelectorScreen}
+          options={{title: 'Aura'}}
         />
-        <Stack.Screen
-          name="Placeholder"
-          component={PlaceholderScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
