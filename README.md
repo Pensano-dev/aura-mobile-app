@@ -9,7 +9,7 @@ Blah blah blah... placeholder for introductory text.
 ## Setup
 
 Clone the app and run `npm install` in both the `frontend` and `backend` directories. 
-* Depending on your local setup , you may need to run `npm i -D nodemon` in the backend. It is in devDependencies in the package.json file, but people seem to have had issues with this in the past.
+* Depending on your local setup , you may need to run `npm i -D nodemon` in the backend. It is in devDependencies in the package.json file, but people seem to have had issues with this in the past. It is recommended by Nodemon to install it globally with `npm install -g nodemon`.
 * See the [Setting up your React Native (frontend) development environment](#setting-up-your-react-native-frontend-development-environment) section below for more information on setting up your React Native development environment.
 * You will need to create a `.env` file in the `backend` directory with the following variables:
   `MONGODB_PW=<our MongoDB Atlas password>` (the actual password is shared privately with the group)
@@ -87,3 +87,11 @@ This app was a prize winner at the Athena Hackathon 2023 for the team comprising
 [Canva presentation](https://www.canva.com/design/DAFnaNSUH6c/3HwneJ2_axm4dUbXObnFIQ/view?utm_content=DAFnaNSUH6c&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1)
 
 [Figma designs](https://www.figma.com/file/YgPoK1QzFK9QRcrTwP2g2u/ambiance-t?type=design&node-id=0-1&mode=design&t=szCVSY9dUuXVDvqJ-0)
+
+## Useful links for React Native development
+
+[React Native documentation](https://reactnative.dev/docs/getting-started)
+
+[React Native Docs - Navigating between screens](https://reactnative.dev/docs/navigation) - This is what I (Pablo) used as reference when setting up the screens stack in App.js.
+
+[React Nagigation - Getting Started](https://reactnavigation.org/docs/getting-started/) - This is what I didn't but probably should have used as reference when setting up the screens stack in App.js.
