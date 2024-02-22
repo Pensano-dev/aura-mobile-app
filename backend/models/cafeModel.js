@@ -1,13 +1,18 @@
 const mongoose = require('mongoose');
 
 const cafeSchema = new mongoose.Schema({
-  cafeDetails: {
+  details: {
     name: { type: String, required: true },
     location: { type: String, required: true },
     phone: { type: String },
-    website: { type: String }
+    website: { type: String },
+    images: [{
+      url: { type: String },
+      title: { type: String },
+      altText: { type: String }
+    }]
   },
-  facilities: { type: [String], required: true }
+  facilities: [String]
 });
 
 module.exports = mongoose.model('Cafe', cafeSchema);
