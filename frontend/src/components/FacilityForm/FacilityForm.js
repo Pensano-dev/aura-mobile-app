@@ -1,6 +1,7 @@
 import React from "react";
 import Facility from "../Facility/Facility";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
+import { styles } from "./FacilityFormStyles";
 
 export default FacilityForm = () => {
   const facilityList = [
@@ -25,12 +26,3 @@ export default FacilityForm = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-  },
-});
