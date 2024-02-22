@@ -17,6 +17,7 @@ export default FacilityForm = () => {
   const handleUpdateFacilityChoices = (facilityName) => {
     if (!facilityChoices.includes(facilityName)) {
       updateFacilityChoices([...facilityChoices, facilityName])
+      console.log(facilityChoices)
     }
   }
 
