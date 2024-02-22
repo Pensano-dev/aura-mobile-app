@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Facility from "../Facility/Facility";
-import { View } from "react-native";
+import { View, Button } from "react-native";
 import { styles } from "./FacilityFormStyles";
 
 export default FacilityForm = () => {
+  const [ facilityChoices, updateFacilityChoices ] = useState([])
+
   const facilityList = [
     // incomplete list just to showcase the outcome
+    // when the BE is sorted then upcoming logic will need to loop through the facility options and match an icon name against them
     { name: "Wifi", iconName: "wifi" },
     { name: "No Bright Lights", iconName: "flashlight" },
     { name: "Low Noise", iconName: "volume-mute" },
   ];
+
+  const handleUpdateFacilityChoices = (facilityName) => {
+    if (!facilityChoices.includes(facilityName)) {
+      updateFacilityChoices([...facilityChoices, facilityName])
+    }
+  }
+
+  const handleSubmit = () => {
+    console.log("Placeholder submission log")
+    // logic for form submission to backend to send array of venues
+  }
 
   return (
     <>
@@ -19,9 +33,11 @@ export default FacilityForm = () => {
             key={index}
             facilityName={facility.name}
             iconName={facility.iconName}
+            onPress={handleUpdateFacilityChoices(facility.name)}
           />
         ))}
       </View>
+      <Button title={"Find Cafes"} onPress={() => handleSubmit()}/>
     </>
   );
 };
