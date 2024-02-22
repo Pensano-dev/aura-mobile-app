@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:net');
+module.exports = $$require_external("node:net");

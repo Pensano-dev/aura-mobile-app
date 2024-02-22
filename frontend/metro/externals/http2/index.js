@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:http2');
+module.exports = $$require_external("node:http2");

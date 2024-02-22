@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:string_decoder');
+module.exports = $$require_external("node:string_decoder");

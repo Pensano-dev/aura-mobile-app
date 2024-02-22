@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:repl');
+module.exports = $$require_external("node:repl");

@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:v8');
+module.exports = $$require_external("node:v8");

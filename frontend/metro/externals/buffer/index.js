@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:buffer');
+module.exports = $$require_external("node:buffer");

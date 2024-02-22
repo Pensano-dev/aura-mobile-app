@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:inspector');
+module.exports = $$require_external("node:inspector");

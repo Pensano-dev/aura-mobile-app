@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:timers');
+module.exports = $$require_external("node:timers");

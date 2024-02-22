@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:querystring');
+module.exports = $$require_external("node:querystring");
