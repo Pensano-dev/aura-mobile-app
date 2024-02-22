@@ -7,9 +7,9 @@ const cafeSchema = new mongoose.Schema({
     phone: { type: String },
     website: { type: String },
     images: [{
-      url: { type: String },
-      title: { type: String },
-      altText: { type: String }
+      url: { type: String, required: true },
+      title: { type: String, required: true },
+      altText: { type: String, required: true }
     }]
   },
   facilities: [String]
