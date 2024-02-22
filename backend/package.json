@@ -7,7 +7,9 @@
     "test": "jest --watchAll --detectOpenHandles",
     "start": "MONGODB_DBNAME=aura_DEV nodemon index.js",
     "start:test": "NODE_ENV=TEST nodemon index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "seed:cafes:dev": "MONGODB_DB='aura_DEV' node ./utils/seedCafes.js",
+    "seed:cafes:test": "MONGODB_DB='aura_TEST' node ./utils/seedCafes.js"
   },
   "keywords": [],
   "author": "",
