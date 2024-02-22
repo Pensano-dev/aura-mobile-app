@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./FacilityStyles";
 
-export default FacilityComponent = ({ facilityName, iconName }) => {
+export default Facility = ({ facilityName, iconName }) => {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
