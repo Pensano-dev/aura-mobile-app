@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Facility from "../Facility/Facility";
-import { View, Button } from "react-native";
+import { View, Button, Pressable } from "react-native";
 import { styles } from "./FacilityFormStyles";
 
 export default FacilityForm = () => {
@@ -21,34 +21,32 @@ export default FacilityForm = () => {
   ];
 
   const handleUpdateFacilityChoices = (facilityName) => {
-    console.log("reached");
     if (!facilityChoices.includes(facilityName)) {
       updateFacilityChoices([...facilityChoices, facilityName]);
-      console.log("facilityChoices:", facilityChoices);
     } else {
-      const updatedChoices = facilityChoices.filter((choice) => choice !== facilityName);
+      const updatedChoices = facilityChoices.filter(
+        (choice) => choice !== facilityName,
+      );
       updateFacilityChoices(updatedChoices);
-      console.log("facilityChoices:", updatedChoices);
     }
   };
 
   const handleSubmit = () => {
-    console.log("Placeholder submission log");
     console.log("facilityChoices:", facilityChoices);
-    // logic for form submission to backend to send array of venues
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.facilityContainer}>
         {facilityList.map((facility, index) => (
-          <Facility
-            key={index}
-            facilityName={facility.name}
-            iconName={facility.iconName}
-            onPress={() => handleUpdateFacilityChoices(facility.name)}
-            style={styles.facility}
-          />
+          <Pressable onPress={() => handleUpdateFacilityChoices(facility.name)}>
+            <Facility
+              key={index}
+              facilityName={facility.name}
+              iconName={facility.iconName}
+              style={styles.facility}
+            />
+          </Pressable>
         ))}
       </View>
       <View style={styles.buttonContainer}>
