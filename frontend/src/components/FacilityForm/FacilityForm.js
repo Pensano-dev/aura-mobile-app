@@ -34,6 +34,7 @@ export default FacilityForm = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.facilityContainer}>
       {facilityList.map((facility, index) => (
         <Facility
           key={index}
@@ -42,6 +43,7 @@ export default FacilityForm = () => {
           onPress={() => handleUpdateFacilityChoices(facility.name)}
         />
       ))}
+      </View>
       <View style={styles.buttonContainer}>
         <Button title={"Find Cafes"} onPress={handleSubmit} />
       </View>
