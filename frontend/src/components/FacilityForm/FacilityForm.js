@@ -39,9 +39,8 @@ export default FacilityForm = () => {
     <View style={styles.container}>
       <View style={styles.facilityContainer}>
         {facilityList.map((facility, index) => (
-          <Pressable onPress={() => handleUpdateFacilityChoices(facility.name)}>
+          <Pressable key={index} onPress={() => handleUpdateFacilityChoices(facility.name)}>
             <Facility
-              key={index}
               facilityName={facility.name}
               iconName={facility.iconName}
               style={styles.facility}
