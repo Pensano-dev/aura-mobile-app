@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:stream');
+module.exports = $$require_external("node:stream");

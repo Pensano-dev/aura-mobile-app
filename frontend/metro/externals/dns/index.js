@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:dns');
+module.exports = $$require_external("node:dns");

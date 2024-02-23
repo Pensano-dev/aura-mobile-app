@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:worker_threads');
+module.exports = $$require_external("node:worker_threads");

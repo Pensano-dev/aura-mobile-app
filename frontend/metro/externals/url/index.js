@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:url');
+module.exports = $$require_external("node:url");

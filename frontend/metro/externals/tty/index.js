@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:tty');
+module.exports = $$require_external("node:tty");

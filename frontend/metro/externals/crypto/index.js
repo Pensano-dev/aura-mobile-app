@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:crypto');
+module.exports = $$require_external("node:crypto");

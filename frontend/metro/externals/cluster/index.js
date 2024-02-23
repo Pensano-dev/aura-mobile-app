@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:cluster');
+module.exports = $$require_external("node:cluster");

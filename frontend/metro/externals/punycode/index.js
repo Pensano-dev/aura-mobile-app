@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:punycode');
+module.exports = $$require_external("node:punycode");

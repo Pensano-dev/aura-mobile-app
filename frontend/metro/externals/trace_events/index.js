@@ -1,1 +1,1 @@
-module.exports = $$require_external('node:trace_events');
+module.exports = $$require_external("node:trace_events");
