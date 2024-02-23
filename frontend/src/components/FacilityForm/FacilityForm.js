@@ -25,6 +25,10 @@ export default FacilityForm = () => {
     if (!facilityChoices.includes(facilityName)) {
       updateFacilityChoices([...facilityChoices, facilityName]);
       console.log("facilityChoices:", facilityChoices);
+    } else {
+      const updatedChoices = facilityChoices.filter((choice) => choice !== facilityName);
+      updateFacilityChoices(updatedChoices);
+      console.log("facilityChoices:", updatedChoices);
     }
   };
 
