@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonContainer: {
-    marginTop: 20,
+    marginTop: 60,
   },
   facilityContainer: {
     flexDirection: "row",
