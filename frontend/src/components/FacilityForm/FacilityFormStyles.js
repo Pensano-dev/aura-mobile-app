@@ -9,6 +9,8 @@ export const styles = StyleSheet.create({
     paddingVertical: 16,
   },
   buttonContainer: {
-    paddingBottom: 20,
+    alignItems: 'center',
+    justifyContent: 'center', // button needs centreing need to fix this
+    marginTop: 56,
   },
 });

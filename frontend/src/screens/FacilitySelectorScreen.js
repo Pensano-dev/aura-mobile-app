@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native";
+import FacilityForm from "../components/FacilityForm/FacilityForm";
 
 const FacilitySelectorScreen = ({ navigation }) => {
   return (

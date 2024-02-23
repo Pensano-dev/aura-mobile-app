@@ -12,6 +12,12 @@ export default FacilityForm = () => {
     { name: "Wifi", iconName: "wifi" },
     { name: "No Bright Lights", iconName: "flashlight" },
     { name: "Low Noise", iconName: "volume-mute" },
+    { name: "Wifi", iconName: "wifi" },
+    { name: "No Bright Lights", iconName: "flashlight" },
+    { name: "Low Noise", iconName: "volume-mute" },
+    { name: "Wifi", iconName: "wifi" },
+    { name: "No Bright Lights", iconName: "flashlight" },
+    { name: "Low Noise", iconName: "volume-mute" },
   ];
 
   const handleUpdateFacilityChoices = (facilityName) => {
