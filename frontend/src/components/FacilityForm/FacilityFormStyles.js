@@ -8,4 +8,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 16,
   },
+  buttonContainer: {
+    paddingBottom: 20,
+  },
 });

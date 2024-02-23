@@ -4,7 +4,7 @@ import { View, Button } from "react-native";
 import { styles } from "./FacilityFormStyles";
 
 export default FacilityForm = () => {
-  const [ facilityChoices, updateFacilityChoices ] = useState([])
+  const [facilityChoices, updateFacilityChoices] = useState([]);
 
   const facilityList = [
     // incomplete list just to showcase the outcome
@@ -16,30 +16,29 @@ export default FacilityForm = () => {
 
   const handleUpdateFacilityChoices = (facilityName) => {
     if (!facilityChoices.includes(facilityName)) {
-      updateFacilityChoices([...facilityChoices, facilityName])
-      console.log(facilityChoices)
+      updateFacilityChoices([...facilityChoices, facilityName]);
+      console.log(facilityChoices);
     }
-  }
+  };
 
   const handleSubmit = () => {
-    console.log("Placeholder submission log")
+    console.log("Placeholder submission log");
     // logic for form submission to backend to send array of venues
-  }
+  };
 
   return (
-    <>
-      <View style={styles.container}>
-        {facilityList.map((facility, index) => (
-          <Facility
-            key={index}
-            facilityName={facility.name}
-            iconName={facility.iconName}
-            onPress={handleUpdateFacilityChoices(facility.name)}
-          />
-        ))}
+    <View style={styles.container}>
+      {facilityList.map((facility, index) => (
+        <Facility
+          key={index}
+          facilityName={facility.name}
+          iconName={facility.iconName}
+          onPress={() => handleUpdateFacilityChoices(facility.name)}
+        />
+      ))}
+      <View style={styles.buttonContainer}>
+        <Button title={"Find Cafes"} onPress={handleSubmit} />
       </View>
-      <Button title={"Find Cafes"} onPress={() => handleSubmit()}/>
-    </>
+    </View>
   );
 };
-
