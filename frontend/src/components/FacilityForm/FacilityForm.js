@@ -35,17 +35,18 @@ export default FacilityForm = () => {
   return (
     <View style={styles.container}>
       <View style={styles.facilityContainer}>
-      {facilityList.map((facility, index) => (
-        <Facility
-          key={index}
-          facilityName={facility.name}
-          iconName={facility.iconName}
-          onPress={() => handleUpdateFacilityChoices(facility.name)}
-        />
-      ))}
+        {facilityList.map((facility, index) => (
+          <Facility
+            key={index}
+            facilityName={facility.name}
+            iconName={facility.iconName}
+            onPress={() => handleUpdateFacilityChoices(facility.name)}
+            style={styles.facility}
+          />
+        ))}
       </View>
       <View style={styles.buttonContainer}>
-        <Button title={"Find Cafes"} onPress={handleSubmit} />
+        <Button title={"Find Cafes"} onPress={handleSubmit} color={"green"} />
       </View>
     </View>
   );

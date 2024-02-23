@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
     paddingHorizontal: 16,
     paddingVertical: 16,
-    alignItems: 'center',
+    alignItems: "center",
   },
   buttonContainer: {
     marginTop: 20,
