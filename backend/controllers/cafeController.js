@@ -4,9 +4,8 @@ exports.getCafesByFacilities = async (req, res, next) => {
   const { facilities } = req.query;
 
   try {
-    const selectedCafes = await Cafe.find({});
-    console.log('selectedCafes', selectedCafes);
-    res.status(200).json(selectedCafes);
+    const matchingCafes = await Cafe.find({ facilities: { $in: facilities } });
+    res.status(200).json(matchingCafes);
   } catch (error) {
     next(error);
   }
