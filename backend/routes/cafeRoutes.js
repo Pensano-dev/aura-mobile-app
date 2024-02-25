@@ -3,6 +3,6 @@ const router = express.Router();
 
 const cafeCtrl = require('../controllers/cafeController');
 
-router.get('/selected', cafeCtrl.getCafesByFacilities);
+router.get('/selected', cafeCtrl.getCafesByFacilitiesAndLocation);
 
 module.exports = router;

@@ -1,6 +1,6 @@
 const Cafe = require('../models/cafeModel')
 
-exports.getCafesByFacilities = async (req, res, next) => {
+exports.getCafesByFacilitiesAndLocation = async (req, res, next) => {
   const { facilities } = req.query;
 
   try {
