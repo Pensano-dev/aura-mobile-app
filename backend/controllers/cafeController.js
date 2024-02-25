@@ -1,0 +1,1 @@
+const Cafe = require('../models/cafeModel')

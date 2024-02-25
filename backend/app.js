@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const healthRoutes = require('./routes/healthRoutes');
+const cafeRoutes = require('./routes/cafeRoutes');
 
 const dbPassword = process.env.MONGODB_PW;
 const dbName = process.env.MONGODB_DBNAME || 'aura_TEST';
@@ -29,5 +30,6 @@ mongoose
 app.use(express.json());
 
 app.use('/api/v1.0/health', healthRoutes);
+app.use('/api/v1.0/cafe', cafeRoutes);
 
 module.exports = app;
