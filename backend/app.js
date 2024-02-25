@@ -32,4 +32,9 @@ app.use(express.json());
 app.use('/api/v1.0/health', healthRoutes);
 app.use('/api/v1.0/cafes', cafeRoutes);
 
+app.use((err, req, res, next) => {
+  const status = err.status || 500;
+  res.status(status).json({ message: err.message });
+});
+
 module.exports = app;
