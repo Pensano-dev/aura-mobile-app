@@ -7,6 +7,8 @@ const dbPassword = process.env.MONGODB_PW;
 const dbName = process.env.MONGODB_DBNAME || 'aura_TEST';
 const mongoDbUrl = `mongodb+srv://pensano-aura-db-user:${dbPassword}@cluster0.sylisri.mongodb.net/${dbName}`;
 
+console.log(`🌱 Seeding cafes to MongoDB Atlas ${dbName} database...`);
+
 mongoose
   .connect(mongoDbUrl)
   .then(() => {
@@ -22,16 +24,16 @@ const clearCafes = async () => {
 };
 
 const insertCafes = async () => {
-  await Cafe.insertMany(CafeSeedData);
+  await Cafe.insertMany(cafeSeedData);
 };
 
 const seedCafes = async () => {
   try {
     await clearCafes();
     await insertCafes();
-    console.log('Cafe seeding completed successfully.');
+    console.log(`🎉 Cafe seeding of ${dbName} completed successfully.`);
   } catch (error) {
-    console.error('Cafe seeding failed:', error);
+    console.error('😫 Cafe seeding failed:', error);
   } finally {
     process.exit(0);
   }

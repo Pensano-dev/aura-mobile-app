@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { styles } from "./FacilityComponentStyles";
+import { styles } from "./FacilityStyles";
 
 export default FacilityComponent = ({ facilityName, iconName }) => {
   return (
