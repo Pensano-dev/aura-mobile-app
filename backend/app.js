@@ -30,6 +30,27 @@ mongoose
 app.use(express.json());
 
 app.use('/api/v1.0/health', healthRoutes);
-app.use('/api/v1.0/cafe', cafeRoutes);
+app.use('/api/v1.0/cafes', cafeRoutes);
 
 module.exports = app;
+
+// const { MongoClient } = require("mongodb");
+
+// const client = new MongoClient(mongoDbUrl);
+
+// async function run() {
+//   try {
+//     const database = client.db('aura_DEV');
+//     const cafes = database.collection('cafes');
+
+//     // Query for a movie that has the title 'Back to the Future'
+//     const query = { name: 'Tate Modern Corner'};
+//     const cafe = await cafes.findOne(query);
+
+//     console.log(cafe);
+//   } finally {
+//     // Ensures that the client will close when you finish/error
+//     await client.close();
+//   }
+// }
+// run().catch(console.dir);
