@@ -9,7 +9,6 @@ export const Facility = ({ facilityName, iconName, onPress, isPressed }) => {
       <Pressable
         onPress={onPress}
         style={({ pressed }) => [
-          styles.pressable,
           { backgroundColor: pressed && isPressed ? "lightblue" : "transparent" },
         ]}
       >
