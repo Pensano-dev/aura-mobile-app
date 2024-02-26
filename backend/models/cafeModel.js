@@ -12,7 +12,7 @@ const cafeSchema = new mongoose.Schema({
     title: { type: String, required: true },
     altText: { type: String, required: true }
   }],
-  facilities: [String]
+  facilities: [],
 });
 
 module.exports = mongoose.model('Cafe', cafeSchema, 'cafes');
