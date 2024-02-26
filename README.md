@@ -71,6 +71,8 @@ The database collections can be seeded with using the `seedCafes.js` file in the
 
 `npm run seed:cafes:dev` will seed the `cafes` collection in the `aura_DEV` database.
 `npm run seed:cafes:test` will seed the `cafes` collection in the `aura_TEST` database.
+`npm run seed:cafes:production:ARE_YOU_SURE_YOU_SHOULD_BE_DOING_THIS` will seed the `cafes` collection in the `aura` production database.
+**IMPORTANT: All current production data will be lost if the above command is run.**
 
 ## Testing
 
