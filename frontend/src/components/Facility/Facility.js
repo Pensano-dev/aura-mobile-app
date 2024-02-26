@@ -3,7 +3,7 @@ import { Text, View, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./FacilityStyles";
 
-export const Facility = ({ facilityName, iconName, onPress, isPressed }) => {
+export default Facility = ({ facilityName, iconName, onPress, isPressed }) => {
   return (
     <View style={styles.container}>
       <Pressable
@@ -20,4 +20,3 @@ export const Facility = ({ facilityName, iconName, onPress, isPressed }) => {
     </View>
   );
 };
-

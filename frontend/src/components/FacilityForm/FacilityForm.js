@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import Facility from "../Facility/Facility";
-import { View, Button, Pressable } from "react-native";
+import { View, Button } from "react-native";
 import { styles } from "./FacilityFormStyles";
 
 export default FacilityForm = () => {
-  const [facilityChoices, updateFacilityChoices] = useState([]);
-  const [pressedFacility, setPressedFacility] = useState(null);
+  const [facilityChoices, setFacilityChoices] = useState(new Set());
 
   const facilityList = [
-    // incomplete list just to showcase the outcome, duplicated 3xjust to show it on the ui
-    // when the BE is sorted then upcoming logic will need to loop through the facility options and match an icon name against them
     { name: "Wifi", iconName: "wifi" },
     { name: "No Bright Lights", iconName: "flashlight" },
     { name: "Low Noise", iconName: "volume-mute" },
@@ -22,22 +19,18 @@ export default FacilityForm = () => {
   ];
 
   const handleUpdateFacilityChoices = (facilityName) => {
-    if (!facilityChoices.includes(facilityName)) {
-      updateFacilityChoices([...facilityChoices, facilityName]);
-      setPressedFacility(
-        facilityName === pressedFacility ? null : facilityName,
-      );
+    const updatedFacilityChoices = new Set(facilityChoices);
+    if (updatedFacilityChoices.has(facilityName)) {
+      updatedFacilityChoices.delete(facilityName);
     } else {
-      const updatedChoices = facilityChoices.filter(
-        (choice) => choice !== facilityName,
-      );
-      updateFacilityChoices(updatedChoices);
+      updatedFacilityChoices.add(facilityName);
     }
+    setFacilityChoices(updatedFacilityChoices);
   };
 
   const handleSubmit = () => {
-    console.log("facilityChoices:", facilityChoices);
-    updateFacilityChoices([]);
+    console.log("facilityChoices:", Array.from(facilityChoices));
+    setFacilityChoices(new Set());
   };
 
   return (
@@ -49,7 +42,7 @@ export default FacilityForm = () => {
             facilityName={facility.name}
             iconName={facility.iconName}
             onPress={() => handleUpdateFacilityChoices(facility.name)}
-            isPressed={facility.name === pressedFacility}
+            isPressed={facilityChoices.has(facility.name)}
           />
         ))}
       </View>
