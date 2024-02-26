@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Facility from "../Facility/Facility";
-import { View, Pressable } from "react-native";
+import { View, Pressable, Text } from "react-native";
 import { styles } from "./FacilityFormStyles";
 import Button from "../Button/Button";
+import { Ionicons } from "@expo/vector-icons";
 
-export default FacilityForm = () => {
+const FacilityForm = () => {
   const [facilityList, setFacilityList] = useState([]);
 
   const exampleList = [
@@ -33,10 +34,20 @@ export default FacilityForm = () => {
     console.log("facilityList:", facilityList);
   };
 
+  const handleFormReset = () => {
+    setFacilityList([])
+  }
+
   return (
     <>
-      {/* Add reset button */}
-      <View style={styles.container}>
+      <View style={styles.formContainer}>
+        <Text style={styles.header}>CAFES</Text>
+        <View>
+          <Text style={styles.subheading}>What are your needs today?</Text>
+          <Pressable onPress={() => handleFormReset()}>
+            <Ionicons name={'refresh-circle-sharp'} size={30}/>
+          </Pressable>
+        </View>
         <View style={styles.facilityContainer}>
           {exampleList.map((facility, index) => (
             <View key={index} style={styles.facility}>
@@ -59,3 +70,5 @@ export default FacilityForm = () => {
     </>
   );
 };
+
+export default FacilityForm;
