@@ -3,23 +3,11 @@ import { View, Text, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./FacilityStyles";
 
-const Facility = ({ icon, name, onPress }) => {
-  const [isPressed, setIsPressed] = useState(false);
-
-  const handlePressIn = () => {
-    setIsPressed(true);
-  };
-
-  const handlePressOut = () => {
-    setIsPressed(false);
-  };
-
+const Facility = ({ icon, name, onPress, isPressed }) => {
   return (
     <View style={styles.container}>
       <Pressable
         onPress={onPress}
-        onPressIn={handlePressIn}
-        onPressOut={handlePressOut}
         style={({ pressed }) => [
           styles.iconContainer,
           { backgroundColor: pressed || isPressed ? "lightblue" : "lightgrey" },

@@ -9,5 +9,5 @@ export default Button = ({ onPress, title }) => {
         <Text style={styles.text}>{title}</Text>
       </TouchableOpacity>
     </>
-  )
-}
+  );
+};
