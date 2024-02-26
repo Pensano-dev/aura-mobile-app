@@ -5,18 +5,16 @@ const facilityWidth = (screenWidth - 48) / 3;
 
 export const styles = StyleSheet.create({
   container: {
-    flexDirection: "column",
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-    alignItems: "center",
-  },
-  buttonContainer: {
-    marginTop: 60,
+    paddingHorizontal: 13,
+    paddingVertical: 13,
   },
   facilityContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
+  },
+  buttonContainer: {
+    marginTop: 60,
   },
   facility: {
     width: facilityWidth,

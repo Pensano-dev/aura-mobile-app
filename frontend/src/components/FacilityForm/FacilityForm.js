@@ -1,54 +1,72 @@
 import React, { useState } from "react";
 import Facility from "../Facility/Facility";
-import { View, Button } from "react-native";
+import { View, Pressable } from "react-native";
 import { styles } from "./FacilityFormStyles";
+import Button from "../Button/Button";
 
 export default FacilityForm = () => {
-  const [facilityChoices, setFacilityChoices] = useState(new Set());
+  const [facilityList, setFacilityList] = useState([])
+  const [isPressed, setIsPressed] = useState(false);
 
-  const facilityList = [
-    { name: "Wifi", iconName: "wifi" },
-    { name: "No Bright Lights", iconName: "flashlight" },
-    { name: "Low Noise", iconName: "volume-mute" },
-    { name: "Wifi 2", iconName: "wifi" },
-    { name: "No Bright Lights 2", iconName: "flashlight" },
-    { name: "Low Noise 2", iconName: "volume-mute" },
-    { name: "Wifi 3", iconName: "wifi" },
-    { name: "No Bright Lights 3", iconName: "flashlight" },
-    { name: "Low Noise 3", iconName: "volume-mute" },
-  ];
+  const exampleList = [
+    {name: "Wifi", icon: "wifi"},
+    {name: "Low noise", icon: "volume-mute"},
+    {name: "Toilets", icon: "business"},
+    {name: "Work friendly", icon: "headset"},
+    {name: "Example", icon: "paw"},
+    {name: "Example 2", icon: "notifications"},
+  ]
 
-  const handleUpdateFacilityChoices = (facilityName) => {
-    const updatedFacilityChoices = new Set(facilityChoices);
-    if (updatedFacilityChoices.has(facilityName)) {
-      updatedFacilityChoices.delete(facilityName);
+  const handleSelectFacility = (facilityName) => {
+    const isFacilitySelected = facilityList.includes(facilityName);
+    if (!isFacilitySelected) {
+      const updatedFacilityList = [...facilityList, facilityName];
+      setFacilityList(updatedFacilityList);
+      console.log("Facility added:", facilityName)
     } else {
-      updatedFacilityChoices.add(facilityName);
+      const updatedFacilityList = facilityList.filter((facility) => facility !== facilityName);
+      setFacilityList(updatedFacilityList);
+      console.log("Facility removed:", facilityName);
     }
-    setFacilityChoices(updatedFacilityChoices);
-  };
+  }
 
   const handleSubmit = () => {
-    console.log("facilityChoices:", Array.from(facilityChoices));
-    setFacilityChoices(new Set());
+    console.log("facilityList:", facilityList)
+  }
+
+  const handlePressIn = () => {
+    setIsPressed(true);
+  };
+
+  const handlePressOut = () => {
+    setIsPressed(false);
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.facilityContainer}>
-        {facilityList.map((facility, index) => (
-          <Facility
-            key={index}
-            facilityName={facility.name}
-            iconName={facility.iconName}
-            onPress={() => handleUpdateFacilityChoices(facility.name)}
-            isPressed={facilityChoices.has(facility.name)}
-          />
-        ))}
+    <>
+      <View style={styles.container}>
+        <View style={styles.facilityContainer}>
+          {
+            exampleList.map((facility, index) => (
+              <View key={index} style={styles.facility}>
+                <Facility
+                  key={index}
+                  icon={facility.icon}
+                  name={facility.name}
+                  onPress={() => handleSelectFacility(facility.name)}
+                  onPressIn={handlePressIn}
+                  onPressOut={handlePressOut}
+                />
+              </View>
+            ))
+          }
+        </View>
+        <View style={styles.buttonContainer}>
+          <Pressable>
+            <Button onPress={() => handleSubmit()} title={"Continue"} />
+          </Pressable>
+        </View>
       </View>
-      <View style={styles.buttonContainer}>
-        <Button title={"Find Cafes"} onPress={handleSubmit} color={"green"} />
-      </View>
-    </View>
+    </>
   );
 };

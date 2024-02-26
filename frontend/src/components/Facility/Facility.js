@@ -1,17 +1,37 @@
-import React from "react";
-import { Text, View, Pressable } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./FacilityStyles";
 
-export default Facility = ({ facilityName, iconName, onPress, isPressed }) => {
+const Facility = ({ icon, name, onPress, onPressIn, onPressOut }) => {
+  const [isPressed, setIsPressed] = useState(false);
+
+  const handlePressIn = () => {
+    setIsPressed(true);
+    onPressIn();
+  };
+
+  const handlePressOut = () => {
+    setIsPressed(false);
+    onPressOut();
+  };
+
   return (
     <View style={styles.container}>
-      <Pressable onPress={onPress}>
-        <View style={[styles.iconContainer, { backgroundColor: isPressed ? "lightblue" : "lightgrey" }]}>
-          <Ionicons name={iconName} size={65} color="black" style={styles.icon} />
-        </View>
-        <Text>{facilityName}</Text>
+      <Pressable
+        onPress={onPress}
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        style={({ pressed }) => [
+          styles.iconContainer,
+          { backgroundColor: isPressed ? "blue" : "grey" },
+        ]}
+      >
+        <Ionicons name={icon} size={75} />
       </Pressable>
+      <Text>{name}</Text>
     </View>
   );
 };
+
+export default Facility;
