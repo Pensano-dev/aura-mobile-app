@@ -22,11 +22,13 @@ export default FacilityForm = () => {
     if (!isFacilitySelected) {
       const updatedFacilityList = [...facilityList, facilityName];
       setFacilityList(updatedFacilityList);
+      setIsPressed(true)
       console.log("Facility added:", facilityName)
     } else {
       const updatedFacilityList = facilityList.filter((facility) => facility !== facilityName);
       setFacilityList(updatedFacilityList);
       console.log("Facility removed:", facilityName);
+      setIsPressed(false)
     }
   }
 
@@ -34,16 +36,9 @@ export default FacilityForm = () => {
     console.log("facilityList:", facilityList)
   }
 
-  const handlePressIn = () => {
-    setIsPressed(true);
-  };
-
-  const handlePressOut = () => {
-    setIsPressed(false);
-  };
-
   return (
     <>
+    {/* Add reset button */}
       <View style={styles.container}>
         <View style={styles.facilityContainer}>
           {
@@ -54,8 +49,6 @@ export default FacilityForm = () => {
                   icon={facility.icon}
                   name={facility.name}
                   onPress={() => handleSelectFacility(facility.name)}
-                  onPressIn={handlePressIn}
-                  onPressOut={handlePressOut}
                 />
               </View>
             ))
