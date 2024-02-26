@@ -6,13 +6,8 @@ import { styles } from "./FacilityStyles";
 export default Facility = ({ facilityName, iconName, onPress, isPressed }) => {
   return (
     <View style={styles.container}>
-      <Pressable
-        onPress={onPress}
-        style={({ pressed }) => [
-          { backgroundColor: pressed && isPressed ? "lightblue" : "transparent" },
-        ]}
-      >
-        <View style={[styles.iconContainer, { backgroundColor: isPressed ? "lightgrey" : "transparent" }]}>
+      <Pressable onPress={onPress}>
+        <View style={[styles.iconContainer, { backgroundColor: isPressed ? "lightblue" : "lightgrey" }]}>
           <Ionicons name={iconName} size={65} color="black" style={styles.icon} />
         </View>
         <Text>{facilityName}</Text>
