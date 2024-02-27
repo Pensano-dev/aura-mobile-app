@@ -32,13 +32,16 @@ const FacilityForm = () => {
   };
 
   const handleSubmit = () => {
-    console.log("facilityList:", facilityList);
+    if (facilityList.length === 0) {
+      console.log("FacilityList is empty")
+    } else {
+      console.log("facilityList:", facilityList);
+    }
   };
 
   const handleFormReset = () => {
     setFacilityList([])
   }
-  // Add a exception when a user selects coontinue without pressing anything
 
   return (
     <>
