@@ -4,9 +4,11 @@ import { View, Pressable, Text } from "react-native";
 import { styles } from "./FacilityFormStyles";
 import Button from "../Button/Button";
 import { Ionicons } from "@expo/vector-icons";
+import PopUpModal from "../Modal/PopUpModal";
 
 const FacilityForm = () => {
   const [facilityList, setFacilityList] = useState([]);
+  const [isModalVisible, setModalVisible] = useState(false);
 
   const exampleList = [
     { name: "Wifi", icon: "wifi" },
@@ -33,15 +35,19 @@ const FacilityForm = () => {
 
   const handleSubmit = () => {
     if (facilityList.length === 0) {
-      console.log("FacilityList is empty")
+      setModalVisible(true);
     } else {
       console.log("facilityList:", facilityList);
     }
   };
 
   const handleFormReset = () => {
-    setFacilityList([])
-  }
+    setFacilityList([]);
+  };
+
+  const handleCloseModal = () => {
+    setModalVisible(false);
+  };
 
   return (
     <>
@@ -50,7 +56,7 @@ const FacilityForm = () => {
         <View style={styles.subheadingContainer}>
           <Text style={styles.subheading}>What are your needs today?</Text>
           <Pressable onPress={() => handleFormReset()}>
-            <Ionicons name={'refresh-circle-sharp'} size={30}/>
+            <Ionicons name={"refresh-circle-sharp"} size={30} />
           </Pressable>
         </View>
         <View style={styles.facilityContainer}>
@@ -72,6 +78,7 @@ const FacilityForm = () => {
           </Pressable>
         </View>
       </View>
+      <PopUpModal isVisible={isModalVisible} onClose={handleCloseModal} />
     </>
   );
 };
