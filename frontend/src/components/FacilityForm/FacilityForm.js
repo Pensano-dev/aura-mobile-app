@@ -19,6 +19,7 @@ const FacilityForm = () => {
 
   const handleSelectFacility = (facilityName) => {
     const isFacilitySelected = facilityList.includes(facilityName);
+
     if (!isFacilitySelected) {
       const updatedFacilityList = [...facilityList, facilityName];
       setFacilityList(updatedFacilityList);
@@ -37,12 +38,13 @@ const FacilityForm = () => {
   const handleFormReset = () => {
     setFacilityList([])
   }
+  // Add a exception when a user selects coontinue without pressing anything
 
   return (
     <>
       <View style={styles.formContainer}>
         <Text style={styles.header}>CAFES</Text>
-        <View>
+        <View style={styles.subheadingContainer}>
           <Text style={styles.subheading}>What are your needs today?</Text>
           <Pressable onPress={() => handleFormReset()}>
             <Ionicons name={'refresh-circle-sharp'} size={30}/>

@@ -18,6 +18,12 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     marginLeft: 10,
   },
+  subheadingContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    marginRight: 20
+  },
   formContainer: {
     paddingHorizontal: 13,
     paddingVertical: 13,
