@@ -15,6 +15,10 @@ const cafeSeedData = [
       },
     ],
     facilities: ['wheelchair accessibility', 'wi-fi', 'toilets'],
+    location: {
+      type: "Point",
+      coordinates: [51.5089, -0.1264],
+    },
   },
 
   {
@@ -41,6 +45,10 @@ const cafeSeedData = [
       'visual impaired',
       'outdoor area',
     ],
+    location: {
+      type: "Point",
+      coordinates: [51.5297, -0.1270],
+    },
   },
 
   {
@@ -61,12 +69,17 @@ const cafeSeedData = [
     ],
     facilities: [
       'wheelchair accessibility',
-      'wi-fi',
+      'autism friendly',
       'toilets',
-      'baby changing',
       'visual impaired',
     ],
+    location: {
+      type: "Point",
+      coordinates: [51.5076, -0.0994],
+    },
   },
 ];
 
 module.exports = cafeSeedData;
+
+// In original data, Tate Modern Corner DOES HAVE wifi & baby changing but DOES NOT HAVE autism friendly facilities. I changed this for testing purposes. 
