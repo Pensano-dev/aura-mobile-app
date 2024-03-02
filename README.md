@@ -63,6 +63,17 @@ At time of writing, the databases contain only a health collection as referenced
 
 The connection string for MongoDB Compass is `mongodb+srv://pensano-aura-db-user:<password>@cluster0.sylisri.mongodb.net/`, using the shared password.
 
+## Seeding the database collections
+
+The database collections can be seeded with using the `seedCafes.js` file in the `backend` directory.
+
+`cd backend` to navigate to the backend directory.
+
+`npm run seed:cafes:dev` will seed the `cafes` collection in the `aura_DEV` database.
+`npm run seed:cafes:test` will seed the `cafes` collection in the `aura_TEST` database.
+`npm run seed:cafes:production:ARE_YOU_SURE_YOU_SHOULD_BE_DOING_THIS` will seed the `cafes` collection in the `aura` production database.
+**IMPORTANT: All current production data will be lost if the above command is run.**
+
 ## Testing
 
 ### Running Unit and Integration Tests in the Backend
