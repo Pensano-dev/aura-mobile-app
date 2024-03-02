@@ -17,6 +17,8 @@ This contents table has two links for each section. The first link is to the Git
 | Testing | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#testing) | [IDE link](#testing) |
 | Athena Hackathon Team documentation | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#links-to-documentation-from-the-athena-hackathon-team) | [IDE link](#links-to-documentation-from-the-athena-hackathon-team) |
 | React Native development links | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#Useful-links-for-react-native-development) | [IDE link](#useful-links-for-react-native-development) |
+| Dev Notes - Using Location | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app?tab=readme-ov-file#using-location) | [IDE link](#using-location) |
+| Dev Notes - getCafes controller function query | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app?tab=readme-ov-file#getcafesbyfacilitiesandlocation-controller-function-query-backend--controllers--cafecontrollerjs) | [IDE link](#getcafesbyfacilitiesandlocation-controller-function-query-backend--controllers--cafecontrollerjs) |
 
 
 
