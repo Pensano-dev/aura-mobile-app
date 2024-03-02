@@ -59,7 +59,7 @@ const FacilityForm = () => {
                 icon={facility.icon}
                 name={facility.name}
                 onPress={() => handleSelectFacility(facility.name)}
-                isPressed={facilityList.includes(facility.name)}
+                isSelected={facilityList.includes(facility.name)}
               />
             </View>
           ))}
