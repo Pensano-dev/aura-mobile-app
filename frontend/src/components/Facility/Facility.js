@@ -1,15 +1,23 @@
-import React from "react";
-import { Text, View } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./FacilityStyles";
 
-export default FacilityComponent = ({ facilityName, iconName }) => {
+const Facility = ({ icon, name, onPress, isSelected }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.iconContainer}>
-        <Ionicons name={iconName} size={65} color="black" style={styles.icon} />
-      </View>
-      <Text>{facilityName}</Text>
+      <Pressable
+        onPress={onPress}
+        style={({ pressed }) => [
+          styles.iconContainer,
+          { backgroundColor: pressed || isSelected ? "lightblue" : "lightgrey" },
+        ]}
+      >
+        <Ionicons name={icon} size={75} />
+      </Pressable>
+      <Text>{name}</Text>
     </View>
   );
 };
+
+export default Facility;
