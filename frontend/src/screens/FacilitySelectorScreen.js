@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import FacilityComponent from "../components/FacilityComponent/FacilityComponent";
+import Facility from "../components/Facility/Facility";
 
 export default FacilitySelectorScreen = ({ navigation }) => {
   const facilityList = [
@@ -13,7 +13,7 @@ export default FacilitySelectorScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {facilityList.map((facility, index) => (
-        <FacilityComponent
+        <Facility
           key={index}
           facilityName={facility.name}
           iconName={facility.iconName}
