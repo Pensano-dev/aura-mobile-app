@@ -14,8 +14,9 @@ exports.getCafesByFacilitiesAndLocation = async (req, res, next) => {
     ? { $all: requiredFacilities.split(',') }
     : { $in: facilities.split(',') };
 
+  const [latitude, longitude] = userLocation.split(',').map(Number);
+
   try {
-    const [latitude, longitude] = userLocation.split(',').map(Number);
 
     const matchingCafes = await Cafe.aggregate([
       {
@@ -45,4 +46,6 @@ exports.getCafesByFacilitiesAndLocation = async (req, res, next) => {
     next(error);
   }
 };
+
+// NOTE: Information regarding the query in this controller and about the use of location may be found in the README.md file in the root of the project.
 
