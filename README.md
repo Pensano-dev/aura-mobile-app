@@ -6,7 +6,9 @@ Blah blah blah... placeholder for introductory text.
 
 [Notes on development in React Native](#notes-on-development-in-react-native)
 
+
 [Setup](#setup)
+
 
 [Starting the app](#starting-the-app)
 
