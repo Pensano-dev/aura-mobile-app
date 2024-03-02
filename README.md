@@ -5,16 +5,27 @@ Blah blah blah... placeholder for introductory text.
 ## Contents
 
 [Notes on development in React Native](#notes-on-development-in-react-native)
+
 [Setup](#setup)
+
 [Starting the app](#starting-the-app)
+
 [Setting up your React Native (frontend) development environment](#setting-up-your-react-native-frontend-development-environment)
+
 [Backend server and health check](#backend-server-and-health-check)
+
 [Database](#database)
+
 [Seeding the database collections](#seeding-the-database-collections)
+
 [Testing](#testing)
+
 [Athena Hackathon Team documentation](#links-to-documentation-from-the-athena-hackathon-team)
+
 [Useful links for React Native development](#useful-links-for-react-native-development)
+
 [Dev Notes](#developer-notes-information-and-learning-sharing)
+
 * [Using Location](#using-location)
 * [getCafes controller function query](#getcafesbyfacilitiesandlocation-controller-function-query-backend--controllers--cafecontrollerjs)
 
