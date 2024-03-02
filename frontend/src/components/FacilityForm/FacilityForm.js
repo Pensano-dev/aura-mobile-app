@@ -5,20 +5,12 @@ import { styles } from "./FacilityFormStyles";
 import Button from "../Button/Button";
 import { Ionicons } from "@expo/vector-icons";
 import PopUpModal from "../Modal/PopUpModal";
+import { mockFacilities } from "./mockData";
 
 const FacilityForm = () => {
   const [facilityList, setFacilityList] = useState([]);
   const [isModalVisible, setModalVisible] = useState(false);
-
-  const exampleList = [
-    { name: "Wifi", icon: "wifi" },
-    { name: "Low noise", icon: "volume-mute" },
-    { name: "Toilets", icon: "business" },
-    { name: "Work friendly", icon: "headset" },
-    { name: "Example", icon: "paw" },
-    { name: "Example 2", icon: "notifications" },
-  ];
-
+  
   const handleSelectFacility = (facilityName) => {
     const isFacilitySelected = facilityList.includes(facilityName);
 
@@ -60,7 +52,7 @@ const FacilityForm = () => {
           </Pressable>
         </View>
         <View style={styles.facilityContainer}>
-          {exampleList.map((facility, index) => (
+          {mockFacilities.map((facility, index) => (
             <View key={index} style={styles.facility}>
               <Facility
                 key={index}
