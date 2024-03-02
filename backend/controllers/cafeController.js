@@ -1,12 +1,13 @@
 const Cafe = require('../models/cafeModel');
-const defaultDistance = 5000; // in meters, i.e., 5000 = 5km
+// NOTE: The 5km below is an arbitary decision until we decide as a group what we think is a reasonable default distance
+const defaultDistance = 5000; // in meters, i.e., 5000 = 5km 
 
 exports.getCafesByFacilitiesAndLocation = async (req, res, next) => {
   const { facilities, requiredFacilities, userLocation } = req.query;
   const maxDistance = Number(req.query.distance) || defaultDistance;
 
   if ((!requiredFacilities && !facilities) || !userLocation) {
-    throw new Error('Both facilities and location are required.');
+    return next({status: 400, message: 'Both facilities and location are required.'});
   }
 
   const facilitiesQuery = requiredFacilities
@@ -15,7 +16,6 @@ exports.getCafesByFacilitiesAndLocation = async (req, res, next) => {
 
   try {
     const [latitude, longitude] = userLocation.split(',').map(Number);
-    console.log('latitude:', latitude, 'longitude:', longitude, 'distance:', maxDistance);
 
     const matchingCafes = await Cafe.aggregate([
       {
@@ -45,3 +45,4 @@ exports.getCafesByFacilitiesAndLocation = async (req, res, next) => {
     next(error);
   }
 };
+
