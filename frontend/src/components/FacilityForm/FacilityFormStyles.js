@@ -7,14 +7,12 @@ export const styles = StyleSheet.create({
   header: {
     fontSize: 24,
     fontWeight: "bold",
-    fontFamily: "Arial",
     marginBottom: 10,
     marginTop: 10,
     marginLeft: 10,
   },
   subheading: {
     fontSize: 18,
-    fontFamily: "Arial",
     marginBottom: 20,
     marginLeft: 10,
   },
