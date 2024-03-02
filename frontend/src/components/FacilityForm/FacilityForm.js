@@ -70,7 +70,7 @@ const FacilityForm = () => {
           </Pressable>
         </View>
       </View>
-      <PopUpModal isVisible={isModalVisible} onClose={handleCloseModal} />
+      <PopUpModal isVisible={isModalVisible} onClose={handleCloseModal} message={'Please select at least 1 facility.'} />
     </>
   );
 };
