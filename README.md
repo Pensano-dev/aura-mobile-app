@@ -3,16 +3,22 @@
 Blah blah blah... placeholder for introductory text.
 
 ## Contents
-* Notes on development in React Native | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#notes-on-development-in-react-native) | [In-repo link](#notes-on-development-in-react-native)
-* Setup | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#setup) | [In-repo link](#setup)
-* Starting the app | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#starting-the-app) | [In-repo link](#starting-the-app)
-* Set up React Native dev environment | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#setting-up-your-react-native-frontend-development-environment) | [In-repo link](#setting-up-your-react-native-frontend-development-environment)
-* Backend server and health check | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#backend-server-and-health-check) | [In-repo link](#backend-server-and-health-check)
-* Database | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#database) | [In-repo link](#database)
-* Seeding the database collections | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#seeding-the-database-collections) | [In-repo link](#seeding-the-database-collections)
-* Testing | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#testing) | [In-repo link](#testing)
-* Athena Hackathon Team documentation | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#links-to-documentation-from-the-athena-hackathon-team) | [In-repo link](#links-to-documentation-from-the-athena-hackathon-team)
-* React Native development links | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#useful-links-for-react-native-development) | [In-repo link](#useful-links-for-react-native-development)
+
+This contents table has two links for each section. The first link is to the GitHub README.md file on the main branch, and the second link is to the in-repo README.md file for dev use, e.g. within VSCode.
+| Section | In browser | In repo |
+| --- | --- | --- |
+| Notes on development in React Native | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#notes-on-development-in-react-native) | [IDE link](#notes-on-development-in-react-native) |
+| Setup | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#setup) | [IDE link](#setup) |
+| Starting the app | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#starting-the-app) | [IDE link](#starting-the-app) |
+| Set up React Native dev environment | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#setting-up-your-react-native-frontend-development-environment) | [IDE link](#setting-up-your-react-native-frontend-development-environment) |
+| Backend server and health check | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#backend-server-and-health-check) | [IDE link](#backend-server-and-health-check) |
+| Database | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#database) | [IDE link](#database) |
+| Seeding the database collections | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#seeding-the-database-collections) | [IDE link](#seeding-the-database-collections) |
+| Testing | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#testing) | [IDE link](#testing) |
+| Athena Hackathon Team documentation | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#links-to-documentation-from-the-athena-hackathon-team) | [IDE link](#links-to-documentation-from-the-athena-hackathon-team) |
+| React Native development links | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#Useful-links-for-react-native-development) | [IDE link](#useful-links-for-react-native-development) |
+
+
 
 ## Notes on development in React Native
 
