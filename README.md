@@ -2,6 +2,18 @@
 
 Blah blah blah... placeholder for introductory text.
 
+## Contents
+* Notes on development in React Native | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#notes-on-development-in-react-native) | [In-repo link](#notes-on-development-in-react-native)
+* Setup | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#setup) | [In-repo link](#setup)
+* Starting the app | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#starting-the-app) | [In-repo link](#starting-the-app)
+* Set up React Native dev environment | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#setting-up-your-react-native-frontend-development-environment) | [In-repo link](#setting-up-your-react-native-frontend-development-environment)
+* Backend server and health check | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#backend-server-and-health-check) | [In-repo link](#backend-server-and-health-check)
+* Database | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#database) | [In-repo link](#database)
+* Seeding the database collections | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#seeding-the-database-collections) | [In-repo link](#seeding-the-database-collections)
+* Testing | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#testing) | [In-repo link](#testing)
+* Athena Hackathon Team documentation | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#links-to-documentation-from-the-athena-hackathon-team) | [In-repo link](#links-to-documentation-from-the-athena-hackathon-team)
+* React Native development links | [GitHub link](https://github.com/Pensano-dev/aura-mobile-app/blob/main/README.md#useful-links-for-react-native-development) | [In-repo link](#useful-links-for-react-native-development)
+
 ## Notes on development in React Native
 
 * It is important to look at the result in both iOS and Android simulators, as the layout can be strikingly different on different devices, particularly in regard to styling. Note that some styling properies are supported in iOS but not in Android, and vice versa.
@@ -17,8 +29,9 @@ Clone the app and run `npm install` in both the `frontend` and `backend` directo
 * You will need to create a `.env` file in the `backend` directory with the following variables:
   `MONGODB_PW=<our MongoDB Atlas password>` (the actual password is shared privately with the group)
 
-## Starting the app (frontend and backend) from the root directory
+## Starting the app
 
+### Starting the frontend and backend from the root directory
 
 `npm run server` will start the backend server on localhost:8080. This will connect to the database on MongoDB Atlas (once it is set up).
 
@@ -26,13 +39,13 @@ Clone the app and run `npm install` in both the `frontend` and `backend` directo
 `npm run ios` will open the a QR code for iOS devices and open the app in an iOS simulator.
 `npm run android` will open the a QR code for Android devices and open the app in an Android simulator.
 
-## Starting the frontend from the frontend directory
+### Starting the frontend from the frontend directory
 
 `npm start` will start the frontend in development mode. This will open a browser window with a QR code. You can scan this with your phone to open the app in the Expo Go app, or you can follow the terminal instructions to open the app in a simulator.
 `npm run ios` will open the a QR code for iOS devices and open the app in an iOS simulator.
 `npm run android` will open the a QR code for Android devices and open the app in an Android simulator.
 
-## Starting the backend from the backend directory
+### Starting the backend from the backend directory
 
 `npm start` will start the backend server on localhost:8080. This will connect to the database on MongoDB Atlas (once it is set up).
 
