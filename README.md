@@ -4,34 +4,21 @@ Blah blah blah... placeholder for introductory text.
 
 ## Contents
 
-[Notes on development in React Native](#notes-on-development-in-react-native)
-
-
-[Setup](#setup)
-
-
-[Starting the app](#starting-the-app)
-
-[Setting up your React Native (frontend) development environment](#setting-up-your-react-native-frontend-development-environment)
-
-[Backend server and health check](#backend-server-and-health-check)
-
-[Database](#database)
-
-[Seeding the database collections](#seeding-the-database-collections)
-
-[Testing](#testing)
-
-[Athena Hackathon Team documentation](#links-to-documentation-from-the-athena-hackathon-team)
-
-[Useful links for React Native development](#useful-links-for-react-native-development)
-
-[Dev Notes](#developer-notes-information-and-learning-sharing)
-
-* [Using Location](#using-location)
-* [getCafes controller function query](#getcafesbyfacilitiesandlocation-controller-function-query-backend--controllers--cafecontrollerjs)
-
-
+| Section | Description |
+| ------- | ----------- |
+| [React Native notes](#notes-on-development-in-react-native) | Key points on development in React Native |  
+| [Setup](#setup) | Instructions for setting up the repo |
+| [Starting the app](#starting-the-app) | Instructions for starting the app |
+| [Setting up the React Native dev environment](#setting-up-your-react-native-frontend-development-environment) | Instructions for setting up your React Native development environment |
+| [Backend server and health check](#backend-server-and-health-check) | Information on the backend server and health check endpoint |
+| [Database](#database) | Information on the database |
+| [Seeding the database](#seeding-the-database-collections) | Instructions for seeding the various databases and their collections |
+| [Testing](#testing) | Instructions for running tests |
+| [Athena Hackathon Team documentation](#links-to-documentation-from-the-athena-hackathon-team) | Links to documentation from the Athena Hackathon Team |
+| [Useful links for React Native development](#useful-links-for-react-native-development) | Useful links for React Native development |
+| [Dev Notes](#developer-notes-information-and-learning-sharing) | Important dev learning shared in the sections below: |
+| [Using Location](#using-location) | Key notes on using location in the app |
+| [getCafes controller function query](#getcafesbyfacilitiesandlocation-controller-function-query-backend--controllers--cafecontrollerjs) | Key notes on the `getCafesByFacilitiesAndLocation` controller function query |
 
 ## Notes on development in React Native
 
