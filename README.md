@@ -4,50 +4,27 @@ Blah blah blah... placeholder for introductory text.
 
 ## Contents
 
-| Section | Description |
-| ------- | ----------- |
-| [React Native notes](#notes-on-development-in-react-native) | Key on development in React Native |  
-| [Setup](#setup) | Instructions for setting up the app |
-| [Starting the app](#starting-the-app) | Instructions for starting the app |
-| [Setting up your React Native (frontend) development environment](#setting-up-your-react-native-frontend-development-environment) | Instructions for setting up your React Native development environment |
-| [Backend server and health check](#backend-server-and-health-check) | Information on the backend server and health check |
-| [Database](#database) | Information on the database |
-| [Seeding the database collections](#seeding-the-database-collections) | Instructions for seeding the database collections |
-| [Testing](#testing) | Instructions for running tests |
-| [Athena Hackathon Team documentation](#links-to-documentation-from-the-athena-hackathon-team) | Links to documentation from the Athena Hackathon Team |
-| [Useful links for React Native development](#useful-links-for-react-native-development) | Useful links for React Native development |
-| [Dev Notes](#developer-notes-information-and-learning-sharing) | Developer notes (information and learning sharing) |
-| [Using Location](#using-location) | Information on using location in the app |
-| [getCafes controller function query](#getcafesbyfacilitiesandlocation-controller-function-query-backend--controllers--cafecontrollerjs) | Information on the `getCafesByFacilitiesAndLocation` controller function query |
-
-[Notes on development in React Native](#notes-on-development-in-react-native)
-
-
-[Setup](#setup)
-
-
-[Starting the app](#starting-the-app)
-
-[Setting up your React Native (frontend) development environment](#setting-up-your-react-native-frontend-development-environment)
-
-[Backend server and health check](#backend-server-and-health-check)
-
-[Database](#database)
-
-[Seeding the database collections](#seeding-the-database-collections)
-
-[Testing](#testing)
-
-[Athena Hackathon Team documentation](#links-to-documentation-from-the-athena-hackathon-team)
-
-[Useful links for React Native development](#useful-links-for-react-native-development)
-
-[Dev Notes](#developer-notes-information-and-learning-sharing)
-
-* [Using Location](#using-location)
-* [getCafes controller function query](#getcafesbyfacilitiesandlocation-controller-function-query-backend--controllers--cafecontrollerjs)
-
-
+- [Aura](#aura)
+  - [Contents](#contents)
+  - [Notes on development in React Native](#notes-on-development-in-react-native)
+  - [Setup](#setup)
+  - [Starting the app](#starting-the-app)
+    - [Starting the frontend and backend from the root directory](#starting-the-frontend-and-backend-from-the-root-directory)
+    - [Starting the frontend from the frontend directory](#starting-the-frontend-from-the-frontend-directory)
+    - [Starting the backend from the backend directory](#starting-the-backend-from-the-backend-directory)
+  - [Setting up your React Native (frontend) development environment](#setting-up-your-react-native-frontend-development-environment)
+  - [Backend server and health check](#backend-server-and-health-check)
+  - [Database](#database)
+  - [Seeding the database collections](#seeding-the-database-collections)
+  - [Testing](#testing)
+    - [Running Unit and Integration Tests in the Backend](#running-unit-and-integration-tests-in-the-backend)
+  - [Links to documentation from the Athena Hackathon Team](#links-to-documentation-from-the-athena-hackathon-team)
+  - [Useful links for React Native development](#useful-links-for-react-native-development)
+  - [Developer Notes (Information and Learning Sharing)](#developer-notes-information-and-learning-sharing)
+    - [Using Location](#using-location)
+      - [Location in the CafeModel (backend \> models \> CafeModel.js)](#location-in-the-cafemodel-backend--models--cafemodeljs)
+      - [Using the location in the cafeController (backend \> controllers \> cafeController.js)](#using-the-location-in-the-cafecontroller-backend--controllers--cafecontrollerjs)
+    - [getCafesByFacilitiesAndLocation controller function query (backend \> controllers \> cafeController.js)](#getcafesbyfacilitiesandlocation-controller-function-query-backend--controllers--cafecontrollerjs)
 
 ## Notes on development in React Native
 
