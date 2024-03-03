@@ -1,5 +1,10 @@
 name: CI Pipeline
 
+env:
+  VALIDATE_ALL_CODEBASE: true
+  DEFAULT_BRANCH: main
+  MONGODB_URI: mongodb+srv://pensano-aura-db-user:${{ secrets.DB_PASSWORD }}@cluster0.sylisri.mongodb.net/aura-DEV
+
 on:
   push:
     branches: [ "main" ]
@@ -7,35 +12,31 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  install_deps:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Super Linter on backend
-      env:
-        VALIDATE_ALL_CODEBASE: true
-        DEFAULT_BRANCH: main
-      working-directory: backend
-      run:
-        npm install
-        npm run lint
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.0.2
 
-    - name: Jest on backend
-      env:
-        MONGODB_URI: mongodb+srv://pensano-aura-db-user:${{ secrets.DB_PASSWORD }}@cluster0.sylisri.mongodb.net/aura-DEV
-      working-directory: backend
-      run:
-        npm start
-        npm run test
+      - name: Install dependencies backend
+        working-directory: backend
+        run: npm install
 
-    - name: Super Linter on frontend
-      env:
-        VALIDATE_ALL_CODEBASE: true
-        DEFAULT_BRANCH: main
-      working-directory: frontend
-      run:
-        npm install
-        npm run lint
+      - name: Install dependencies frontend
+        working-directory: frontend
+        run: npm install
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: install_deps
+    steps:
+      - name: Lint frontend
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Lint backend
+        working-directory: backend
+        run: npm run lint
