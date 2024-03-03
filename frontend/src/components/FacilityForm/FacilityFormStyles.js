@@ -38,7 +38,6 @@ export const styles = StyleSheet.create({
   },
   refreshIcon: {
     backgroundColor: styleVariables.backgroundColour,
-    // backgroundColor: "#229922",
   }
 });
 
