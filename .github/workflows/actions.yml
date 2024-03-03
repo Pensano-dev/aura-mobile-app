@@ -26,6 +26,7 @@ jobs:
     - name: Jest for backend
       working-directory: backend
       run:
+        npm start
         npm run test
 
     - name: Super Linter for frontend
