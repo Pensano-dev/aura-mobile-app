@@ -35,8 +35,14 @@ jobs:
     steps:
       - name: Lint frontend
         working-directory: frontend
-        run: npm run lint
+        run: |
+          cd ../frontend
+          npm install
+          npm run lint
 
       - name: Lint backend
         working-directory: backend
-        run: npm run lint
+        run: |
+          cd ../backend
+          npm install
+          npm run lint
