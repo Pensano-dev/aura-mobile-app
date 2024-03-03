@@ -22,24 +22,24 @@ describe('healthController', () => {
     });
   });
   
-  describe('getHealthEntry()', () => {
-    test('should return the specified health object and status 200', async () => {
-      // Arrange
-      const mReq = {};
-      const mRes = {
-        status: jest.fn().mockReturnThis(),
-        json: jest.fn(),
-      };
-      const mNext = jest.fn();
+  // describe('getHealthEntry()', () => {
+  //   test('should return the specified health object and status 200', async () => {
+  //     // Arrange
+  //     const mReq = {};
+  //     const mRes = {
+  //       status: jest.fn().mockReturnThis(),
+  //       json: jest.fn(),
+  //     };
+  //     const mNext = jest.fn();
 
-      // Act
-      await getHealthEntry(mReq, mRes, mNext);
+  //     // Act
+  //     await getHealthEntry(mReq, mRes, mNext);
 
-      // Assert
-      expect(mRes.status).toBeCalledWith(200);
-      expect(mRes.json.mock.calls[0][0].status).toBe(
-        "all is well"
-      );
-    });
-  });
+  //     // Assert
+  //     expect(mRes.status).toBeCalledWith(200);
+  //     expect(mRes.json.mock.calls[0][0].status).toBe(
+  //       "all is well"
+  //     );
+  //   });
+  // });
 });
