@@ -5,7 +5,7 @@ import { styles } from "./FacilityFormStyles";
 import Button from "../Button/Button";
 import { Ionicons } from "@expo/vector-icons";
 import PopUpModal from "../Modal/PopUpModal";
-import { mockFacilities } from "./mockData";
+import { faciltiesData } from "../../data/facilitiesData";
 
 const FacilityForm = () => {
   const [facilityList, setFacilityList] = useState([]);
