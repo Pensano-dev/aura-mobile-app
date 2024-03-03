@@ -4,6 +4,10 @@ const screenWidth = Dimensions.get("window").width;
 const facilityWidth = (screenWidth - 48) / 3;
 
 export const styles = StyleSheet.create({
+  formContainer: {
+    justifyContent: "space-between",
+    height: "90%",
+  },
   header: {
     fontSize: 24,
     fontWeight: "bold",
@@ -22,20 +26,14 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginRight: 20,
   },
-  formContainer: {
-    paddingHorizontal: 13,
-    paddingVertical: 13,
-  },
   facilityContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-  },
-  buttonContainer: {
-    marginTop: 60,
   },
   facility: {
     width: facilityWidth,
     marginBottom: 15,
   },
 });
+
