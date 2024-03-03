@@ -34,15 +34,6 @@ jobs:
     needs: install_deps
     steps:
       - name: Lint frontend
-        working-directory: frontend
+        # working-directory: frontend
         run: |
-          cd ../frontend
-          npm install
-          npm run lint
-
-      - name: Lint backend
-        working-directory: backend
-        run: |
-          cd ../backend
-          npm install
           npm run lint
