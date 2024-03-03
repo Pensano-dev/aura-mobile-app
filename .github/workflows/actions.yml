@@ -25,7 +25,7 @@ jobs:
 
     - name: Jest on backend
       env:
-        MONGODB_URI: mongodb+srv://pensano-aura-db-user:${{ secrets.DB_PASSWORD }}@cluster0.sylisri.mongodb.net/aura_TEST
+        MONGODB_URI: mongodb+srv://pensano-aura-db-user:${{ secrets.DB_PASSWORD }}@cluster0.sylisri.mongodb.net/aura-DEV
       working-directory: backend
       run:
         npm start
