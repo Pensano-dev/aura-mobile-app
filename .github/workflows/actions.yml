@@ -23,6 +23,11 @@ jobs:
         npm install
         npm run lint
 
+    - name: Jest for backend
+      working-directory: backend
+      run:
+        npm run test
+
     - name: Super Linter for frontend
       env:
         VALIDATE_ALL_CODEBASE: true
