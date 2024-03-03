@@ -47,7 +47,7 @@ const FacilityForm = () => {
         <View>
           <View style={styles.subheadingContainer}>
             <Text style={styles.subheading}>What are your needs today?</Text>
-            <Pressable onPress={() => handleFormReset()}>
+            <Pressable onPress={() => handleFormReset()} style={styles.refreshIcon}>
               <Ionicons name={'refresh-circle-sharp'} size={30} />
             </Pressable>
           </View>

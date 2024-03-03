@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import {styleVariables} from "../../styles/globalStyleVariables";
 
 const screenWidth = Dimensions.get("window").width;
 const facilityWidth = (screenWidth - 48) / 3;
@@ -35,5 +36,9 @@ export const styles = StyleSheet.create({
     width: facilityWidth,
     marginBottom: 15,
   },
+  refreshIcon: {
+    backgroundColor: styleVariables.backgroundColour,
+    // backgroundColor: "#229922",
+  }
 });
 
