@@ -14,7 +14,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Super Linter for backend
+    - name: Super Linter on backend
       env:
         VALIDATE_ALL_CODEBASE: true
         DEFAULT_BRANCH: main
@@ -23,13 +23,15 @@ jobs:
         npm install
         npm run lint
 
-    - name: Jest for backend
+    - name: Jest on backend
+      env:
+        MONGODB_URI: mongodb+srv://pensano-aura-db-user:${{ secrets.DB_PASSWORD }}@cluster0.sylisri.mongodb.net/aura_TEST
       working-directory: backend
       run:
         npm start
         npm run test
 
-    - name: Super Linter for frontend
+    - name: Super Linter on frontend
       env:
         VALIDATE_ALL_CODEBASE: true
         DEFAULT_BRANCH: main
