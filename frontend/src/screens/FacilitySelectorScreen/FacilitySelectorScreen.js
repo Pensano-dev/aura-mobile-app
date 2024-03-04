@@ -1,7 +1,7 @@
 import React from "react";
-import FacilityForm from "../components/FacilityForm/FacilityForm";
+import FacilityForm from "../../components/FacilityForm/FacilityForm";
 import { View, Text, StyleSheet } from "react-native";
-import {styleVariables} from "../styles/globalStyleVariables";
+import {styleVariables} from "../../styles/globalStyleVariables";
 
 const FacilitySelectorScreen = ({ navigation }) => {
   return (
