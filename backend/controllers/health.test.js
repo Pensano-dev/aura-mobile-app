@@ -22,6 +22,8 @@ describe('healthController', () => {
       );
     });
   });
+
+// ⛔️ The test below is deliberately kept as I want to understand why it is failing. It will be ammended or deleted once this is done. Please do not delete it. Thanks - PJ ⛔️
   
 //   // describe('getHealthEntry()', () => {
 //   //   test('should return the specified health object and status 200', async () => {
