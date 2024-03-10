@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import {styleVariables} from "../../styles/globalStyleVariables";
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,6 +11,5 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "lightgrey",
   },
 });
