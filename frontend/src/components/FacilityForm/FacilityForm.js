@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Facility from '../Facility/Facility';
-import { View, Pressable, Text } from 'react-native';
-import { styles } from './FacilityFormStyles';
-import Button from '../Button/Button';
-import { Ionicons } from '@expo/vector-icons';
-import PopUpModal from '../Modal/PopUpModal';
-import { facilitiesData } from '../../data/facilitiesData';
+import React, { useState } from "react";
+import Facility from "../Facility/Facility";
+import { View, Pressable, Text } from "react-native";
+import { styles } from "./FacilityFormStyles";
+import Button from "../Button/Button";
+import { Ionicons } from "@expo/vector-icons";
+import PopUpModal from "../Modal/PopUpModal";
+import { facilitiesData } from "../../data/facilitiesData";
 
 const FacilityForm = () => {
   const [facilities, setFacilities] = useState([]);
@@ -29,7 +29,7 @@ const FacilityForm = () => {
     if (facilities.length === 0) {
       setModalVisible(true);
     } else {
-      console.log('facility:', facilities);
+      console.log("facility:", facilities);
     }
   };
 
@@ -47,8 +47,11 @@ const FacilityForm = () => {
         <View>
           <View style={styles.subheadingContainer}>
             <Text style={styles.subheading}>What are your needs today?</Text>
-            <Pressable onPress={() => handleFormReset()} style={styles.refreshIcon}>
-              <Ionicons name={'refresh-circle-sharp'} size={30} />
+            <Pressable
+              onPress={() => handleFormReset()}
+              style={styles.refreshIcon}
+            >
+              <Ionicons name={"refresh-circle-sharp"} size={30} />
             </Pressable>
           </View>
           <View style={styles.facilityContainer}>
@@ -67,14 +70,14 @@ const FacilityForm = () => {
         </View>
         <View>
           <Pressable>
-            <Button onPress={() => handleSubmit()} title={'Continue'} />
+            <Button onPress={() => handleSubmit()} title={"Continue"} />
           </Pressable>
         </View>
       </View>
       <PopUpModal
         isVisible={isModalVisible}
         onClose={handleCloseModal}
-        message={'Please select at least 1 facility.'}
+        message={"Please select at least 1 facility."}
       />
     </>
   );

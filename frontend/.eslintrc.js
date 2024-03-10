@@ -33,6 +33,11 @@ module.exports = {
     "ignorePatterns": [
       "**/metro/",
       "**.config.js"
-    ]
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
   }
   
