@@ -26,6 +26,24 @@ jobs:
       run:
         npm install && node index.js & sleep 10 && npx jest --detectOpenHandles --forceExit
 
+        # name: Automated API tests using Postman CLI
+
+        # on: push
+        
+        # jobs:
+        #   automated-api-tests:
+        #     runs-on: ubuntu-latest
+        #     steps:
+        #       - uses: actions/checkout@v3
+        #       - name: Install Postman CLI
+        #         run: |
+        #           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+        #       - name: Login to Postman CLI
+        #         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+        #       - name: Run API tests
+        #         run: |
+        #           postman collection run "22301538-6632c39e-12bd-471a-8a7e-bc980af1c554"
+
 
 
 
