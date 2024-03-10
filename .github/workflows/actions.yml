@@ -1,0 +1,35 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install deps
+      run: |
+        npm install
+        cd ..
+        cd frontend && npm install
+      working-directory: backend
+
+    # - name: Jest on backend
+    #   env:
+    #     MONGODB_DBNAME: aura_TEST
+    #     MONGODB_PW: ${{ secrets.DB_PASSWORD }}
+        
+    #   working-directory: backend
+    #   run:
+        # npm run start:test
+        # npm test
+
+
+
