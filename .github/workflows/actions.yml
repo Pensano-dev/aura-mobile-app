@@ -26,15 +26,15 @@ jobs:
         npm run lint:fix
       working-directory: frontend
 
-    # - name: Jest on backend
-    #   env:
-    #     MONGODB_DBNAME: aura_TEST
-    #     MONGODB_PW: ${{ secrets.DB_PASSWORD }}
+    - name: Jest Backend
+      env:
+        MONGODB_DBNAME: aura_TEST
+        MONGODB_PW: ${{ secrets.DB_PASSWORD }}
         
-    #   working-directory: backend
-    #   run:
-        # npm run start:test
-        # npm test
+      working-directory: backend
+      run:
+        npm run start:test
+        npm test
 
 
 
