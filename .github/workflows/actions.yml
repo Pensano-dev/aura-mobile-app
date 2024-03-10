@@ -21,6 +21,11 @@ jobs:
         cd frontend && npm install
       working-directory: backend
 
+    - name: Linter Frontend
+      run: |
+        npm run lint:fix
+      working-directory: frontend
+
     # - name: Jest on backend
     #   env:
     #     MONGODB_DBNAME: aura_TEST
