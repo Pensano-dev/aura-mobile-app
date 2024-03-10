@@ -1,4 +1,4 @@
-name: Automated API tests using Postman CLI
+name: Postman tests
 
 on: push
 
@@ -6,7 +6,16 @@ jobs:
   automated-api-tests:
     runs-on: ubuntu-latest
     steps:
+      
       - uses: actions/checkout@v3
+      - name: Server and tests on backend
+        env:
+          NODE_ENV: TEST
+          MONGODB_DBNAME: aura_TEST
+          MONGODB_PW: ${{ secrets.DB_PASSWORD }}
+        working-directory: backend
+        run:
+          npm install && node index.js & sleep 10
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
