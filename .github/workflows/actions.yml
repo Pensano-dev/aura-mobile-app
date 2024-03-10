@@ -24,7 +24,8 @@ jobs:
         MONGODB_PW: ${{ secrets.DB_PASSWORD }}
       working-directory: backend
       run:
-        npm install && node index.js & npx jest --watchAll --detectOpenHandles --forceExit
+        npm install && node index.js & sleep 10 && npx jest --watchAll --detectOpenHandles --forceExit
+
 
 
 
