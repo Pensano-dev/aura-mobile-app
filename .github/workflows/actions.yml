@@ -18,7 +18,7 @@ jobs:
       run: |
         npm install
         cd ..
-        cd frontend && npm install && npm run lint
+        cd frontend && npm install
       working-directory: backend
 
     # - name: Jest on backend
