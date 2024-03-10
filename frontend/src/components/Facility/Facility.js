@@ -12,8 +12,8 @@ const Facility = ({ icon, name, onPress, isSelected }) => {
         style={({ pressed }) => [
           styles.iconContainer,
           { backgroundColor: pressed || isSelected ? styleVariables.singleSelected : styleVariables.unselected },
-        ]}
-      >
+          ]}
+          >
         <Ionicons name={icon} size={75} />
       </Pressable>
       <Text>{name}</Text>

@@ -4,4 +4,3 @@ export const styleVariables = {
   singleSelected: "lightblue",
   doubleSelected: "darkturquoise",
 }
-
