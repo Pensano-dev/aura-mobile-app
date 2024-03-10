@@ -24,7 +24,7 @@ jobs:
         
       working-directory: backend
       run:
-        npm install && npm run testserver & npm run citest
+        npm install && npm run testserver & npm run ciTest
 
 
 
