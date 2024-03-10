@@ -14,6 +14,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Super Linter on backend
+      env:
+        VALIDATE_ALL_CODEBASE: true
+        DEFAULT_BRANCH: main
+      working-directory: backend
+      run:
+        npm install
+        npm run lint
+
     - name: Jest on backend
       env:
         MONGODB_DBNAME: aura_TEST
@@ -24,12 +33,5 @@ jobs:
         npm run start:test
         npm test
 
-# - name: Super Linter on backend
-#   env:
-#     VALIDATE_ALL_CODEBASE: true
-#     DEFAULT_BRANCH: main
-#   working-directory: backend
-#   run:
-#     npm install
-#     npm run lint
+
 
