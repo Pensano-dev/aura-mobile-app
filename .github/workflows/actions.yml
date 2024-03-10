@@ -14,16 +14,24 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Install deps
-      run: |
-        npm install
-        cd ..
-        cd frontend && npm install
+    - name: Cache node modules
+      uses: actions/cache@v2
+      with:
+        path: |
+          backend/node_modules
+          frontend/node_modules
+        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install backend dependencies
+      run: npm install
       working-directory: backend
 
+    - name: Install frontend dependencies
+      run: npm install
+      working-directory: frontend
+
     - name: Linter Frontend
-      run: |
-        npm run lint:fix
+      run: npm run lint:fix
       working-directory: frontend
 
     - name: Jest Backend
@@ -35,6 +43,3 @@ jobs:
       run:
         npm run start:test
         npm test
-
-
-
