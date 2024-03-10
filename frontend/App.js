@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import FacilitySelectorScreen from "./src/screens/FacilitySelectorScreen";
+import FacilitySelectorScreen from "./src/screens/FacilitySelectorScreen/FacilitySelectorScreen";
 
 const Stack = createNativeStackNavigator();
 

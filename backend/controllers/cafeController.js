@@ -2,7 +2,7 @@ const Cafe = require('../models/cafeModel');
 // NOTE: The 5km below is an arbitary decision until we decide as a group what we think is a reasonable default distance
 const defaultDistance = 5000; // in meters, i.e., 5000 = 5km 
 
-exports.getCafesByFacilitiesAndLocation = async (req, res, next) => {
+exports.getFilteredCafes = async (req, res, next) => {
   const { facilities, requiredFacilities, userLocation } = req.query;
   const maxDistance = Number(req.query.distance) || defaultDistance;
 
