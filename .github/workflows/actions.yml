@@ -14,22 +14,23 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Install deps
-      run: |
-        npm install
-        cd ..
-        cd frontend && npm install
-      working-directory: backend
-
-    # - name: Jest on backend
-    #   env:
-    #     MONGODB_DBNAME: aura_TEST
-    #     MONGODB_PW: ${{ secrets.DB_PASSWORD }}
-        
+    # - name: Install deps
+    #   run: |
+    #     npm install
+    #     cd ..
+    #     cd frontend && npm install
     #   working-directory: backend
-    #   run:
-        # npm run start:test
-        # npm test
+
+    - name: Jest on backend
+      env:
+        MONGODB_DBNAME: aura_TEST
+        MONGODB_PW: ${{ secrets.DB_PASSWORD }}
+        
+      working-directory: backend
+      run:
+        npm install
+        npm run start:test
+        npm test
 
 
 
