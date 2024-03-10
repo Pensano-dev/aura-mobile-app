@@ -14,12 +14,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # - name: Install deps
-    #   run: |
-    #     npm install
-    #     cd ..
-    #     cd frontend && npm install
-    #   working-directory: backend
+    - name: Install Jest globally
+      run: npm install -g jest
 
     - name: Jest on backend
       env:
