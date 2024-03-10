@@ -8,33 +8,33 @@ import PopUpModal from '../Modal/PopUpModal';
 import { facilitiesData } from '../../data/facilitiesData';
 
 const FacilityForm = () => {
-  const [facilityList, setFacilityList] = useState([]);
+  const [facilities, setFacilities] = useState([]);
   const [isModalVisible, setModalVisible] = useState(false);
 
   const handleSelectFacility = (facilityName) => {
-    const isFacilitySelected = facilityList.includes(facilityName);
+    const isFacilitySelected = facilities.includes(facilityName);
 
     if (!isFacilitySelected) {
-      const updatedFacilityList = [...facilityList, facilityName];
-      setFacilityList(updatedFacilityList);
+      const updatedFacilityList = [...facilities, facilityName];
+      setFacilities(updatedFacilityList);
     } else {
-      const updatedFacilityList = facilityList.filter(
+      const updatedFacilityList = facilities.filter(
         (facility) => facility !== facilityName
       );
-      setFacilityList(updatedFacilityList);
+      setFacilities(updatedFacilityList);
     }
   };
 
   const handleSubmit = () => {
-    if (facilityList.length === 0) {
+    if (facilities.length === 0) {
       setModalVisible(true);
     } else {
-      console.log('facilityList:', facilityList);
+      console.log('facility:', facilities);
     }
   };
 
   const handleFormReset = () => {
-    setFacilityList([]);
+    setFacilities([]);
   };
 
   const handleCloseModal = () => {
@@ -59,7 +59,7 @@ const FacilityForm = () => {
                   icon={facility.icon}
                   name={facility.name}
                   onPress={() => handleSelectFacility(facility.name)}
-                  isSelected={facilityList.includes(facility.name)}
+                  isSelected={facilities.includes(facility.name)}
                 />
               </View>
             ))}
