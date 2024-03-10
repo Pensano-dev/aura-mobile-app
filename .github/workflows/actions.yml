@@ -17,19 +17,14 @@ jobs:
     - name: Install Jest globally
       run: npm install -g jest
 
-    - name: Server on backend
+    - name: Server and tests on backend
       env:
         NODE_ENV: TEST
         MONGODB_DBNAME: aura_TEST
         MONGODB_PW: ${{ secrets.DB_PASSWORD }}
       working-directory: backend
       run:
-        npm install && node index.js
-
-    - name: Jest on backend
-      working-directory: backend
-      run:
-        npx jest --detectOpenHandles --forceExit
+        npm install && node index.js & npx jest --detectOpenHandles --forceExit
 
 
 
