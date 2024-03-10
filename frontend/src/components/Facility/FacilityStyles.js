@@ -3,7 +3,7 @@ import {styleVariables} from "../../styles/globalStyleVariables";
 
 export const styles = StyleSheet.create({
   container: {
-    alignItems: "center"
+    alignItems: "center",
   },
   iconContainer: {
     width: 100,
@@ -11,6 +11,5 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "lightgrey"
-  }
+  },
 });
