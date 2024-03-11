@@ -15,7 +15,7 @@ jobs:
           MONGODB_PW: ${{ secrets.DB_PASSWORD }}
         working-directory: backend
         run:
-          npm install && node index.js & sleep 10
+          npm install && node index.js & sleep 5
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
