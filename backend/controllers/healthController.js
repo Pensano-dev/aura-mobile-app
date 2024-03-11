@@ -1,8 +1,10 @@
-const Health = require('../models/healthModel');
+const Health = require("../models/healthModel");
 
 exports.getHealth = (req, res, next) => {
   try {
-    res.status(200).json({message: "All is good with the server but I can't speak for the database."});
+    res.status(200).json({
+      message: "All is good with the server but I can't speak for the database."
+    });
   } catch (error) {
     next(error);
   }
@@ -20,10 +22,10 @@ exports.getHealthEntry = async (req, res, next) => {
 exports.addHealthEntry = async (req, res, next) => {
   const { status } = req.body;
   const healthEntry = new Health({ status });
-  
+
   try {
     await healthEntry.save();
-    res.status(201).json({ message: 'Health entry added successfully!' });
+    res.status(201).json({ message: "Health entry added successfully!" });
   } catch (error) {
     next(error);
   }
