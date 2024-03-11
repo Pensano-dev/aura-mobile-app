@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll --detectOpenHandles",
-    "ciTest": "jest --watchAll --detectOpenHandles --forceExit",
     "start": "MONGODB_DBNAME=aura_DEV nodemon index.js",
     "start:test": "NODE_ENV=TEST nodemon index.js",
-    "testserver": "NODE_ENV=TEST nodemon index.js",
     "server": "nodemon index.js",
     "seed:cafes:dev": "MONGODB_DBNAME='aura_DEV' node ./utils/seedCafes.js",
     "seed:cafes:test": "MONGODB_DBNAME='aura_TEST' node ./utils/seedCafes.js",
