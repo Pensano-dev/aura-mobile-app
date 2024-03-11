@@ -10,7 +10,9 @@
     "server": "nodemon index.js",
     "seed:cafes:dev": "MONGODB_DBNAME='aura_DEV' node ./utils/seedCafes.js",
     "seed:cafes:test": "MONGODB_DBNAME='aura_TEST' node ./utils/seedCafes.js",
-    "seed:cafes:production:ARE_YOU_SURE_YOU_SHOULD_BE_DOING_THIS": "MONGODB_DBNAME='aura' node ./utils/seedCafes.js"
+    "seed:cafes:production:ARE_YOU_SURE_YOU_SHOULD_BE_DOING_THIS": "MONGODB_DBNAME='aura' node ./utils/seedCafes.js",
+    "prettier-format": "prettier --config .prettierrc 'controllers/**/*.js' 'models/**/*.js' 'routes/**/*.js' --write",
+    "lint:fix": "npx eslint . && npm run prettier-format"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +29,7 @@
     "eslint-plugin-react": "^7.34.0",
     "jest": "^29.7.0",
     "nodemon": "^3.0.3",
+    "prettier": "^3.2.5",
     "supertest": "^6.3.4"
   }
 }
