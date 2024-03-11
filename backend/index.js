@@ -36,6 +36,7 @@ const errorHandler = (error) => {
       console.error(`${bind} is already in use.`);
       process.exit(1);
       break;
+    default:
       throw error;
   }
 };
