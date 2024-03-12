@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Navigate to frontend directory and run linting
+cd frontend && npm run lint:fix
+
+# Navigate to backend directory and run linting
+cd backend && npm run lint:fix

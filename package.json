@@ -8,9 +8,13 @@
     "start": "cd frontend && npm start",
     "ios": "cd frontend && npm run ios",
     "android": "cd frontend && npm run android",
-    "server": "cd backend && npm start"
+    "server": "cd backend && npm start",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.0.11"
+  }
 }
