@@ -1,0 +1,30 @@
+name: Lint
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Install FE deps
+      run: npm install
+      working-directory: frontend
+
+    - name: Run linter FE
+      run: npx eslint .
+      working-directory: frontend
+
+    - name: Install BE deps
+      run: npm install
+      working-directory: backend
+
+    - name: Run linter BE
+      run: npx eslint .
+      working-directory: backend
+
+    
