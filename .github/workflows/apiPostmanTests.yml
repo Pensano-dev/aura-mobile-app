@@ -1,0 +1,30 @@
+name: API Postman Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  automated-api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - uses: actions/checkout@v3
+      - name: Server and tests on backend
+        env:
+          NODE_ENV: TEST
+          MONGODB_DBNAME: aura_TEST
+          MONGODB_PW: ${{ secrets.DB_PASSWORD }}
+        working-directory: backend
+        run:
+          npm install && node index.js & sleep 5
+      - name: Install Postman CLI
+        run: |
+          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+      - name: Login to Postman CLI
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+      - name: Run API tests
+        run: |
+          postman collection run "22301538-6632c39e-12bd-471a-8a7e-bc980af1c554"
