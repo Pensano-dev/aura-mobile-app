@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, TouchableHighlight } from "react-native";
+import { View } from "react-native";
 import { styleVariables } from "../../styles/globalStyleVariables";
 import Button from "../Button/Button";
 
