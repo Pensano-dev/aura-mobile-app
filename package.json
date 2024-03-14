@@ -16,8 +16,5 @@
   "license": "ISC",
   "devDependencies": {
     "husky": "^9.0.11"
-  },
-  "dependencies": {
-    "@react-navigation/native": "^6.1.16"
   }
 }
