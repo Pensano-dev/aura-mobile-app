@@ -46,7 +46,9 @@ const FacilityForm = () => {
       <View style={styles.formContainer}>
         <View>
           <View style={styles.subheadingContainer}>
-            <Text style={styles.subheading}>What are your needs today?</Text>
+            <Text style={styles.subheading}>
+              Which facilities are you searching for?
+            </Text>
             <Pressable
               onPress={() => handleFormReset()}
               style={styles.refreshIcon}
@@ -68,10 +70,17 @@ const FacilityForm = () => {
             ))}
           </View>
         </View>
-        <View>
-          <Pressable>
-            <Button onPress={() => handleSubmit()} title={"Continue"} />
-          </Pressable>
+        <View style={styles.buttonContainer}>
+          <Button
+            isPrimary={false}
+            onPress={() => handleSubmit()}
+            title={"Clear all"}
+          />
+          <Button
+            isPrimary={true}
+            onPress={() => handleSubmit()}
+            title={"Next"}
+          />
         </View>
       </View>
       <PopUpModal

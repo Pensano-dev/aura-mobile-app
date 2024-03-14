@@ -1,18 +1,21 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+const primaryBackgroundColor = "#648FFF";
+const secondaryBackgroundColor = "#d3d3d3";
+
+export const styles = (isPrimary) => StyleSheet.create({
   container: {
     elevation: 8,
-    backgroundColor: "#2E8B57",
+    backgroundColor: isPrimary ? primaryBackgroundColor : secondaryBackgroundColor,
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12
   },
   text: {
     fontSize: 18,
-    color: "#fff",
+    color: isPrimary ? '#fff' : '#000',
     fontWeight: "bold",
     alignSelf: "center",
     textTransform: "uppercase"
-  }
+  },
 });
