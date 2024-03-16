@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import FacilitySelectorScreen from "./src/screens/FacilitySelectorScreen/FacilitySelectorScreen";
+import MenuBar from "./src/components/MenuBar/MenuBar";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ export default function App() {
           options={{ title: "Aura" }}
         />
       </Stack.Navigator>
+      <MenuBar></MenuBar>
     </NavigationContainer>
   );
 }

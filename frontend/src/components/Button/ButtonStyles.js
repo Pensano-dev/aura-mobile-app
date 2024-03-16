@@ -5,8 +5,8 @@ export const styles = StyleSheet.create({
     elevation: 8,
     backgroundColor: "#2E8B57",
     borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 12
+    paddingVertical: 15,
+    paddingHorizontal: 20
   },
   text: {
     fontSize: 18,
