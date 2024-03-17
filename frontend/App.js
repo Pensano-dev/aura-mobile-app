@@ -29,6 +29,7 @@ export default function App() {
   let text = 'Waiting..';
   if (errorMsg) {
     text = errorMsg;
+    console.log('text', text);
   } else if (location) {
     console.log('location', location)
     console.log('stringified', JSON.stringify(location));
