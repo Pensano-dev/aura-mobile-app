@@ -39,7 +39,7 @@ export default function App() {
         return;
       }
 
-      let userLocation = await Location.getCurrentPositionAsync({});
+      let userLocation = await Location.getCurrentPositionAsync({accuracy: 6});
       setLocation(userLocation);
     };
 

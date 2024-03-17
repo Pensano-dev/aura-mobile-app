@@ -70,7 +70,7 @@ const FacilityForm = () => {
         </View>
         <View>
           <Pressable>
-            <Button onPress={() => handleSubmit()} title={"The old button"} />
+            <Button onPress={() => handleSubmit()} title={"The old button!"} />
           </Pressable>
         </View>
       </View>
