@@ -4,7 +4,6 @@ import { View, Text, StyleSheet } from "react-native";
 import { styleVariables } from "../../styles/globalStyleVariables";
 
 const FacilitySelectorScreen = () => {
-
   return (
     <>
       <View style={styles.screenContainer}>
