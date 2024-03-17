@@ -55,7 +55,7 @@ export default function App() {
           options={{ title: "Aura" }}
         />
       </Stack.Navigator>
-      <MenuBar></MenuBar>
+      <MenuBar location={location}></MenuBar>
     </NavigationContainer>
   );
 }
