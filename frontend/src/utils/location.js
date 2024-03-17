@@ -10,10 +10,12 @@ import {
 const Location = () => {
   const [locationPermissionInfo, requestPermission] =
     useForegroundPermissions();
+  // console.log(locationPermissionInfo);
 
   async function verifyPermissions() {
     if (locationPermissionInfo.status === PermissionStatus.UNDETERMINED) {
       const permissionResponse = await requestPermission();
+      console.log(locationPermissionInfo.status);
       return permissionResponse.granted;
     }
 
