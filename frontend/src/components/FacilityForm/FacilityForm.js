@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Facility from "../Facility/Facility";
 import { View, Pressable, Text } from "react-native";
 import { styles } from "./FacilityFormStyles";
-//import Button from "../Button/Button";
 import { Ionicons } from "@expo/vector-icons";
 import PopUpModal from "../Modal/PopUpModal";
 import { facilitiesData } from "../../data/facilitiesData";
+import Button from "../Button/Button";
 
 const FacilityForm = () => {
   const [facilities, setFacilities] = useState([]);
@@ -25,13 +25,13 @@ const FacilityForm = () => {
     }
   };
 
-  // const handleSubmit = () => {
-  //   if (facilities.length === 0) {
-  //     setModalVisible(true);
-  //   } else {
-  //     console.log("facility:", facilities);
-  //   }
-  // };
+  const handleSubmit = () => {
+    if (facilities.length === 0) {
+      setModalVisible(true);
+    } else {
+      console.log("facility:", facilities);
+    }
+  };
 
   const handleFormReset = () => {
     setFacilities([]);
@@ -68,11 +68,11 @@ const FacilityForm = () => {
             ))}
           </View>
         </View>
-        {/* <View>
+        <View>
           <Pressable>
             <Button onPress={() => handleSubmit()} title={"Continue"} />
           </Pressable>
-        </View> */}
+        </View>
       </View>
       <PopUpModal
         isVisible={isModalVisible}
