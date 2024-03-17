@@ -25,13 +25,13 @@ const FacilityForm = () => {
     }
   };
 
-  const handleSubmit = () => {
-    if (facilities.length === 0) {
-      setModalVisible(true);
-    } else {
-      console.log("facility:", facilities);
-    }
-  };
+  // const handleSubmit = () => {
+  //   if (facilities.length === 0) {
+  //     setModalVisible(true);
+  //   } else {
+  //     console.log("facility:", facilities);
+  //   }
+  // };
 
   const handleFormReset = () => {
     setFacilities([]);

@@ -1,12 +1,12 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+// import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { styleVariables } from "../../styles/globalStyleVariables";
 import Button from "../Button/Button";
 
 export default function MenuBar() {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Button title="Clear all" />
