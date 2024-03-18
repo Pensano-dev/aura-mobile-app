@@ -9,22 +9,62 @@ import { facilitiesData } from "../../data/facilitiesData";
 
 const FacilityForm = () => {
   const [facilities, setFacilities] = useState([]);
+  const [requiredFacilities, setRequiredFacilities] = useState([]);
+  const [lastPressTime, setLastPressTime] = useState({});
   const [isModalVisible, setModalVisible] = useState(false);
 
   const handleSelectFacility = (facilityName) => {
-    const isFacilitySelected = facilities.includes(facilityName);
-
-    if (!isFacilitySelected) {
-      const updatedFacilityList = [...facilities, facilityName];
-      setFacilities(updatedFacilityList);
+    const now = Date.now();
+    const lastPress = lastPressTime[facilityName] || 0;
+    const timeDiff = now - lastPress;
+  
+    if (timeDiff < 500) { 
+      const isDoubleFacilitySelected = requiredFacilities.includes(facilityName);
+  
+      if (!isDoubleFacilitySelected) {
+        const updatedDoubleFacilityList = [...requiredFacilities, facilityName];
+        setRequiredFacilities(updatedDoubleFacilityList);
+      } else {
+        const updatedDoubleFacilityList = requiredFacilities.filter(
+          (facility) => facility !== facilityName
+        );
+        setRequiredFacilities(updatedDoubleFacilityList);
+      }
     } else {
-      const updatedFacilityList = facilities.filter(
-        (facility) => facility !== facilityName
-      );
+      const isFacilitySelected = facilities.includes(facilityName);
+      const updatedFacilityList = isFacilitySelected
+        ? facilities.filter((facility) => facility !== facilityName)
+        : [...facilities, facilityName];
       setFacilities(updatedFacilityList);
+  
+      if (requiredFacilities.includes(facilityName)) {
+        const updatedDoubleFacilityList = requiredFacilities.filter(
+          (facility) => facility !== facilityName
+        );
+        setRequiredFacilities(updatedDoubleFacilityList);
+      }
     }
+  
+    const updatedPressTime = { ...lastPressTime, [facilityName]: now };
+    setLastPressTime(updatedPressTime);
   };
+  
+  const handleLongPressFacility = (facilityName) => {
+    if (!requiredFacilities.includes(facilityName)) {
+      const updatedDoubleFacilityList = [...requiredFacilities, facilityName];
+      const updatedFacilityList = [...facilities, facilityName];
+      setRequiredFacilities(updatedDoubleFacilityList);
+      setFacilities(updatedFacilityList)
+    } 
+  
+    const now = Date.now();
+    const updatedPressTime = { ...lastPressTime, [facilityName]: now };
+    setLastPressTime(updatedPressTime);
+  };
+  
 
+  
+  
   const handleSubmit = () => {
     if (facilities.length === 0) {
       setModalVisible(true);
@@ -35,12 +75,12 @@ const FacilityForm = () => {
 
   const handleFormReset = () => {
     setFacilities([]);
+    setDoubleFacilities([]);
   };
 
   const handleCloseModal = () => {
     setModalVisible(false);
   };
-
   return (
     <>
       <View style={styles.formContainer}>
@@ -49,12 +89,12 @@ const FacilityForm = () => {
             <Text style={styles.subheading}>
               Which facilities are you searching for?
             </Text>
-            <Pressable
+            {/* <Pressable
               onPress={() => handleFormReset()}
               style={styles.refreshIcon}
             >
               <Ionicons name={"refresh-circle-sharp"} size={30} />
-            </Pressable>
+            </Pressable> */}
           </View>
           <View style={styles.facilityContainer}>
             {facilitiesData.map((facility, index) => (
@@ -63,8 +103,10 @@ const FacilityForm = () => {
                   key={index}
                   icon={facility.icon}
                   name={facility.name}
+                  onLongPress={() => handleLongPressFacility(facility.name)}
                   onPress={() => handleSelectFacility(facility.name)}
                   isSelected={facilities.includes(facility.name)}
+                  isDoubleSelected={requiredFacilities.includes(facility.name)}
                 />
               </View>
             ))}
@@ -73,7 +115,7 @@ const FacilityForm = () => {
         <View style={styles.buttonContainer}>
           <Button
             isPrimary={false}
-            onPress={() => handleSubmit()}
+            onPress={() => handleFormReset()}
             title={"Clear all"}
           />
           <Button

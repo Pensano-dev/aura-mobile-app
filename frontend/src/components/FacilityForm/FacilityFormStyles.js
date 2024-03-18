@@ -43,7 +43,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     marginTop: 20, 
-    backgroundColor: "#FFF",
     paddingVertical: 10,
   },
 });
