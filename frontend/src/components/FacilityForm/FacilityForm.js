@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Facility from "../Facility/Facility";
 import { View, Pressable, Text } from "react-native";
 import { styles } from "./FacilityFormStyles";
-//import Button from "../Button/Button";
 import { Ionicons } from "@expo/vector-icons";
 import PopUpModal from "../Modal/PopUpModal";
 import { facilitiesData } from "../../data/facilitiesData";
+import Button from "../Button/Button";
 
 const FacilityForm = () => {
   const [facilities, setFacilities] = useState([]);
@@ -68,11 +68,11 @@ const FacilityForm = () => {
             ))}
           </View>
         </View>
-        {/* <View>
+        <View>
           <Pressable>
-            <Button onPress={() => handleSubmit()} title={"Continue"} />
+            <Button onPress={() => handleSubmit()} title={"The old button!"} />
           </Pressable>
-        </View> */}
+        </View>
       </View>
       <PopUpModal
         isVisible={isModalVisible}

@@ -10,6 +10,7 @@ This document includes links to useful resources and documentation for the proje
   - [Useful links for React Native development](#useful-links-for-react-native-development)
   - [Shared Learning](#shared-learning)
     - [Using Location](#using-location)
+      - [Location data returned from device](#location-data-returned-from-device)
       - [Location in the CafeModel (backend \> models \> CafeModel.js)](#location-in-the-cafemodel-backend--models--cafemodeljs)
       - [Using the location in the cafeController (backend \> controllers \> cafeController.js)](#using-the-location-in-the-cafecontroller-backend--controllers--cafecontrollerjs)
     - [getCafesByFacilitiesAndLocation controller function query (backend \> controllers \> cafeController.js)](#getcafesbyfacilitiesandlocation-controller-function-query-backend--controllers--cafecontrollerjs)
@@ -34,6 +35,40 @@ This app was a prize winner at the Athena Hackathon 2023 for the team comprising
 ## Shared Learning
 
 ### Using Location
+
+#### Location data returned from device
+
+The location data returned from the device is an object with the following properties:
+```javascript
+{
+  "coords": {
+    "accuracy": 5,
+    "altitude": 0,
+    "altitudeAccuracy": -1,
+    "heading": -1,
+    "latitude": 37.785834,
+    "longitude": -122.406417,
+    "speed": -1
+  },
+  "timestamp": 1710687774112.086
+}
+```
+
+Where location is not given (current MVP for denied location permissions), the location is set to:
+```javascript
+{
+  "coords": {
+    "accuracy": 0,
+    "altitude": null,
+    "altitudeAccuracy": -1,
+    "heading": null,
+    "latitude": 51.5076,
+    "longitude": -0.0994,
+    "speed": 0
+  },
+  "timestamp": 0
+}
+```
 
 #### Location in the CafeModel (backend > models > CafeModel.js)
 
@@ -83,3 +118,4 @@ const facilitiesQuery = requiredFacilities
 If any `requiredFacilities` are passed in the request, the query will return documents that contain ALL of those facilities. If no `requiredFacilities` are passed, the query will return documents that contain ANY of the facilities passed in the `facilities` param.
 
 Overall, the query returns documents that are within the specified distance of the input coordinates AND contain the specified facilities to a limit of 20 objects.
+
