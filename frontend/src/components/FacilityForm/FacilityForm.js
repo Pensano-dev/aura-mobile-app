@@ -43,11 +43,15 @@ const FacilityForm = () => {
         );
         setRequiredFacilities(updatedRequiredFacilities);
       }
+      
     }
+
+    
   
     const updatedPressTime = { ...lastPressTime, [facilityName]: now };
     setLastPressTime(updatedPressTime);
   };
+
   
   const handleLongPressFacility = (facilityName) => {
     if (!requiredFacilities.includes(facilityName)) {
@@ -66,15 +70,17 @@ const FacilityForm = () => {
   
   
   const handleSubmit = () => {
-    if (wantedFacilities.length === 0) {
+    if (wantedFacilities.length === 0 || requiredFacilities.length === 0) {
       setModalVisible(true);
     } else {
       console.log("facility:", wantedFacilities);
+      console.log("required facilities:", requiredFacilities)
     }
   };
 
   const handleFormReset = () => {
     setWantedFacilities([]);
+    setRequiredFacilities([]);
   };
 
   const handleCloseModal = () => {
