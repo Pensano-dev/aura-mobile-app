@@ -111,17 +111,10 @@ const FacilityForm = () => {
             ))}
           </View>
         </View>
-        <View style={styles.buttonContainer}>
-          <Button
-            isPrimary={false}
-            onPress={() => handleFormReset()}
-            title={"Clear all"}
-          />
-          <Button
-            isPrimary={true}
-            onPress={() => handleSubmit()}
-            title={"Next"}
-          />
+        <View>
+          <Pressable>
+            <Button onPress={() => handleSubmit()} title={"Continue"} />
+          </Pressable>
         </View>
       </View>
       <PopUpModal

@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.0",
-    "@react-navigation/native": "^6.1.10",
+    "@react-navigation/native": "^6.1.16",
     "@react-navigation/native-stack": "^6.9.18",
     "expo": "~50.0.4",
     "expo-status-bar": "~1.11.1",
@@ -21,7 +21,8 @@
     "react-native": "0.73.2",
     "react-native-modal": "^13.0.1",
     "react-native-safe-area-context": "4.8.2",
-    "react-native-screens": "~3.29.0"
+    "react-native-screens": "~3.29.0",
+    "expo-location": "~16.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

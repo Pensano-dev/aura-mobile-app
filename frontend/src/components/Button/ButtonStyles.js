@@ -8,8 +8,8 @@ export const styles = (isPrimary) => StyleSheet.create({
     elevation: 8,
     backgroundColor: isPrimary ? primaryBackgroundColor : secondaryBackgroundColor,
     borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 12
+    paddingVertical: 15,
+    paddingHorizontal: 20
   },
   text: {
     fontSize: 18,
