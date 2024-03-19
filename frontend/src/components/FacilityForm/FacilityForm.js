@@ -8,7 +8,7 @@ import PopUpModal from "../Modal/PopUpModal";
 import { facilitiesData } from "../../data/facilitiesData";
 
 const FacilityForm = () => {
-  const [facilities, setFacilities] = useState([]);
+  const [wantedFacilities, setWantedFacilities] = useState([]);
   const [requiredFacilities, setRequiredFacilities] = useState([]);
   const [lastPressTime, setLastPressTime] = useState({});
   const [isModalVisible, setModalVisible] = useState(false);
@@ -19,29 +19,29 @@ const FacilityForm = () => {
     const timeDiff = now - lastPress;
   
     if (timeDiff < 500) { 
-      const isDoubleFacilitySelected = requiredFacilities.includes(facilityName);
+      const isRequiredFacility = requiredFacilities.includes(facilityName);
   
-      if (!isDoubleFacilitySelected) {
-        const updatedDoubleFacilityList = [...requiredFacilities, facilityName];
-        setRequiredFacilities(updatedDoubleFacilityList);
+      if (!isRequiredFacility) {
+        const updatedRequiredFacilities = [...requiredFacilities, facilityName];
+        setRequiredFacilities(updatedRequiredFacilities);
       } else {
-        const updatedDoubleFacilityList = requiredFacilities.filter(
+        const updatedRequiredFacilities = requiredFacilities.filter(
           (facility) => facility !== facilityName
         );
-        setRequiredFacilities(updatedDoubleFacilityList);
+        setRequiredFacilities(updatedRequiredFacilities);
       }
     } else {
-      const isFacilitySelected = facilities.includes(facilityName);
-      const updatedFacilityList = isFacilitySelected
-        ? facilities.filter((facility) => facility !== facilityName)
-        : [...facilities, facilityName];
-      setFacilities(updatedFacilityList);
+      const isWantedFacilitySelected = wantedFacilities.includes(facilityName);
+      const updatedWantedFacilities = isWantedFacilitySelected
+        ? wantedFacilities.filter((facility) => facility !== facilityName)
+        : [...wantedFacilities, facilityName];
+      setWantedFacilities(updatedWantedFacilities);
   
       if (requiredFacilities.includes(facilityName)) {
-        const updatedDoubleFacilityList = requiredFacilities.filter(
+        const updatedRequiredFacilities = requiredFacilities.filter(
           (facility) => facility !== facilityName
         );
-        setRequiredFacilities(updatedDoubleFacilityList);
+        setRequiredFacilities(updatedRequiredFacilities);
       }
     }
   
@@ -51,10 +51,10 @@ const FacilityForm = () => {
   
   const handleLongPressFacility = (facilityName) => {
     if (!requiredFacilities.includes(facilityName)) {
-      const updatedDoubleFacilityList = [...requiredFacilities, facilityName];
-      const updatedFacilityList = [...facilities, facilityName];
-      setRequiredFacilities(updatedDoubleFacilityList);
-      setFacilities(updatedFacilityList)
+      const updatedRequiredFacilities = [...requiredFacilities, facilityName];
+      const updatedWantedFacilities = [...wantedFacilities, facilityName];
+      setRequiredFacilities(updatedRequiredFacilities);
+      setWantedFacilities(updatedWantedFacilities)
     } 
   
     const now = Date.now();
@@ -66,16 +66,15 @@ const FacilityForm = () => {
   
   
   const handleSubmit = () => {
-    if (facilities.length === 0) {
+    if (wantedFacilities.length === 0) {
       setModalVisible(true);
     } else {
-      console.log("facility:", facilities);
+      console.log("facility:", wantedFacilities);
     }
   };
 
   const handleFormReset = () => {
-    setFacilities([]);
-    setDoubleFacilities([]);
+    setWantedFacilities([]);
   };
 
   const handleCloseModal = () => {
@@ -89,12 +88,12 @@ const FacilityForm = () => {
             <Text style={styles.subheading}>
               Which facilities are you searching for?
             </Text>
-            {/* <Pressable
+            <Pressable
               onPress={() => handleFormReset()}
               style={styles.refreshIcon}
             >
               <Ionicons name={"refresh-circle-sharp"} size={30} />
-            </Pressable> */}
+            </Pressable>
           </View>
           <View style={styles.facilityContainer}>
             {facilitiesData.map((facility, index) => (
@@ -105,7 +104,7 @@ const FacilityForm = () => {
                   name={facility.name}
                   onLongPress={() => handleLongPressFacility(facility.name)}
                   onPress={() => handleSelectFacility(facility.name)}
-                  isSelected={facilities.includes(facility.name)}
+                  isSelected={wantedFacilities.includes(facility.name)}
                   isDoubleSelected={requiredFacilities.includes(facility.name)}
                 />
               </View>
