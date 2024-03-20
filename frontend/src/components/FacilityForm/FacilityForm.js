@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Facility from "../Facility/Facility";
 import { View, Pressable, Text } from "react-native";
 import { styles } from "./FacilityFormStyles";
@@ -13,7 +13,18 @@ const FacilityForm = () => {
   const [lastPressTime, setLastPressTime] = useState({});
   const [isModalVisible, setModalVisible] = useState(false);
 
+  useEffect(() => {
+    // Remove duplicates from wantedFacilities
+    const filteredFacilities = wantedFacilities.filter(facility => !requiredFacilities.includes(facility));
+    if (filteredFacilities.length !== wantedFacilities.length) {
+      // Only update if there are changes
+      setWantedFacilities(filteredFacilities);
+    }
+  }, [wantedFacilities, requiredFacilities]);
+
+
   const handleSelectFacility = (facilityName) => {
+
     const now = Date.now();
     const lastPress = lastPressTime[facilityName] || 0;
     const timeDiff = now - lastPress;
@@ -43,10 +54,7 @@ const FacilityForm = () => {
         );
         setRequiredFacilities(updatedRequiredFacilities);
       }
-      
     }
-
-    
   
     const updatedPressTime = { ...lastPressTime, [facilityName]: now };
     setLastPressTime(updatedPressTime);
@@ -70,10 +78,10 @@ const FacilityForm = () => {
   
   
   const handleSubmit = () => {
-    if (wantedFacilities.length === 0 || requiredFacilities.length === 0) {
+    if (requiredFacilities.length === 0) {
       setModalVisible(true);
     } else {
-      console.log("facility:", wantedFacilities);
+      console.log("wanted facility:", wantedFacilities);
       console.log("required facilities:", requiredFacilities)
     }
   };
