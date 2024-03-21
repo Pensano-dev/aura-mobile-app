@@ -4,6 +4,5 @@ export const styleVariables = {
   singleSelected: "lightblue",
   doubleSelected: "#365AB7",
   greenBackground: '#94d876',
-  doubleSelected: "#365AB7",
   menuBarBackground: "lightgrey"
 };
