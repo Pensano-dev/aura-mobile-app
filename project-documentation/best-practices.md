@@ -23,7 +23,7 @@
   - [Frontend](#frontend)
   - [Backend](#backend)
   - [E2E Tests](#e2e-tests)
-- [\***\*Prettier conflicts\*\***](#prettier-conflicts)
+- [Code consistency](#code-consistency)
 - [VSCode Extensions](#vscode-extensions)
 
 # File Structure
@@ -164,11 +164,13 @@ We use Vitest for unit and integration tests and Postman test for API endpoints.
 
 We use Puppeteer for end-to-end tests.
 
-# \***\*Prettier conflicts\*\***
+# Code consistency
 
-Always check if your PR has reformatting changes. We use:
-
-- `" "` double quotation marks instead of `' '` single quotation marks
+- We use arrow functions for all functions, including React components, unless older style functions are specifically required, e.g. for hoisting.
+- We use `async` and `await` for asynchronous functions rather than promises.
+- We use `" "` double quotation marks instead of `' '` single quotation marks.
+- Function names (except React component function declarations) should be verbs, descriptive and follow camelCase. Favour readability over brevity.
+- Endpoint names should be descriptive and follow kebab-case.
 
 # VSCode Extensions
 
