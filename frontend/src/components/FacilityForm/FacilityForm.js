@@ -122,7 +122,6 @@ const FacilityForm = () => {
                   name={facility.name}
                   onLongPress={() => handleLongPressFacility(facility.name)}
                   onPress={() => handleSelectFacility(facility.name)}
-                  // onPress={requiredFacilities.includes(facility.name) ? () => handleFormReset() : () => handleSelectFacility(facility.name)}
                   isSelected={wantedFacilities.includes(facility.name)}
                   isDoubleSelected={requiredFacilities.includes(facility.name)}
                 />
