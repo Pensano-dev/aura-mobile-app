@@ -30,13 +30,13 @@ This seems to be the quickest and most complex way to install Xcode. I have neve
 
 Please add to this with any issues that you think others may need to be aware of.
 
-* Even with Xcode installed via the App Store, I have received an error message when running `npx run ios` telling me I need to install Xcode and linking to the App Store. After going round in circles for a while, I found that running `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer` fixed the problem.
+- Even with Xcode installed via the App Store, I have received an error message when running `npx run ios` telling me I need to install Xcode and linking to the App Store. After going round in circles for a while, I found that running `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer` fixed the problem.
 
-* Having installed Xcode from the [Apple Developer website](https://developer.apple.com/download/all/) as detailed above, when running `npx run ios` I received an error message telling me I needed Xcode v. 14.1 mimimum. I had installed version 14.0.1 as referenced by a different Wikipedia page from the one linked above. I found that Xcode v.14.2 runs fine on Monterey (12.6.2) and then it worked fine.
+- Having installed Xcode from the [Apple Developer website](https://developer.apple.com/download/all/) as detailed above, when running `npx run ios` I received an error message telling me I needed Xcode v. 14.1 mimimum. I had installed version 14.0.1 as referenced by a different Wikipedia page from the one linked above. I found that Xcode v.14.2 runs fine on Monterey (12.6.2) and then it worked fine.
 
-* Opening the Aura app with automatic opening of the iOS Simulator worked seemlessly on a 2014 MacBook Air but opening the simulator for the first time took around 4 mins! This clearly involved a lot of downloading and initialising. Subsequent openings were much quicker, around 17 seconds which still feels like a long time.
+- Opening the Aura app with automatic opening of the iOS Simulator worked seemlessly on a 2014 MacBook Air but opening the simulator for the first time took around 4 mins! This clearly involved a lot of downloading and initialising. Subsequent openings were much quicker, around 17 seconds which still feels like a long time.
 
-* I have read that you need to have a version of Xcode Command Line Tools selected in Xcode Settings and none is selected by default. This was not the case for me but you might want to check by opening Xcode (no need to open a project) and go to Settings > Locations and check that a version of Xcode Command Line Tools is selected.
+- I have read that you need to have a version of Xcode Command Line Tools selected in Xcode Settings and none is selected by default. This was not the case for me but you might want to check by opening Xcode (no need to open a project) and go to Settings > Locations and check that a version of Xcode Command Line Tools is selected.
 
 ## Using the Xcode iOS Simulator with Aura
 
@@ -44,7 +44,7 @@ This is all new to me so I can only tell of my experience so far as a complete b
 
 Xcode does not need to be open for the iOS Simulator to work, just installed.
 
-![Xcode iOS Simulator](./doc_images/ios-sim.gif)
+![Xcode iOS Simulator](./doc-images/ios-sim.gif)
 
 ## Using the Xcode iOS Simulator with Expo
 
@@ -56,4 +56,4 @@ Running `npx expo start` produces a QR code that can be scanned with the Expo Go
 
 Scanning the QR code with the Expo Go app on my iPhone to open the Aura app on my iPhone.
 
-<img src="./doc_images/expo-ios.gif" height="400" style="border: 1px solid #000">
+<img src="./doc-images/expo-ios.gif" height="400" style="border: 1px solid #000">
