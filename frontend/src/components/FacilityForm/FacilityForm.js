@@ -24,12 +24,11 @@ const FacilityForm = () => {
 
 
   const handleSelectFacility = (facilityName) => {
-
     const now = Date.now();
     const lastPress = lastPressTime[facilityName] || 0;
     const timeDiff = now - lastPress;
   
-    if (timeDiff < 500) { 
+    if (timeDiff < 500) {
       const isRequiredFacility = requiredFacilities.includes(facilityName);
   
       if (!isRequiredFacility) {
@@ -43,12 +42,16 @@ const FacilityForm = () => {
       }
     } else {
       const isWantedFacilitySelected = wantedFacilities.includes(facilityName);
-      const updatedWantedFacilities = isWantedFacilitySelected
-        ? wantedFacilities.filter((facility) => facility !== facilityName)
-        : [...wantedFacilities, facilityName];
-      setWantedFacilities(updatedWantedFacilities);
+      const isRequiredFacility = requiredFacilities.includes(facilityName); 
   
-      if (requiredFacilities.includes(facilityName)) {
+      if (!isRequiredFacility) { 
+        const updatedWantedFacilities = isWantedFacilitySelected
+          ? wantedFacilities.filter((facility) => facility !== facilityName)
+          : [...wantedFacilities, facilityName];
+        setWantedFacilities(updatedWantedFacilities);
+      }
+  
+      if (isRequiredFacility) { 
         const updatedRequiredFacilities = requiredFacilities.filter(
           (facility) => facility !== facilityName
         );
@@ -59,6 +62,7 @@ const FacilityForm = () => {
     const updatedPressTime = { ...lastPressTime, [facilityName]: now };
     setLastPressTime(updatedPressTime);
   };
+  
 
   
   const handleLongPressFacility = (facilityName) => {
@@ -118,6 +122,7 @@ const FacilityForm = () => {
                   name={facility.name}
                   onLongPress={() => handleLongPressFacility(facility.name)}
                   onPress={() => handleSelectFacility(facility.name)}
+                  // onPress={requiredFacilities.includes(facility.name) ? () => handleFormReset() : () => handleSelectFacility(facility.name)}
                   isSelected={wantedFacilities.includes(facility.name)}
                   isDoubleSelected={requiredFacilities.includes(facility.name)}
                 />
