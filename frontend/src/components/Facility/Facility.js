@@ -2,7 +2,8 @@ import React from "react";
 import { View, Text, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./FacilityStyles";
-import { styleVariables } from "../../styles/globalStyleVariables";
+import { globalColours } from "../../styles/globalColourVariables";
+
 const Facility = ({
   icon,
   name,
@@ -20,10 +21,10 @@ const Facility = ({
           styles.iconContainer,
           {
             backgroundColor: isDoubleSelected
-              ? styleVariables.doubleSelectedIcon
+              ? globalColours.doubleSelectedIcon
               : pressed || isSelected
-                ? styleVariables.singleSelectedIcon
-                : styleVariables.unselectedIcon
+                ? globalColours.singleSelectedIcon
+                : globalColours.unselectedIcon
           }
         ]}
       >

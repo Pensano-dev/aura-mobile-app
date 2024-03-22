@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { View } from "react-native";
-import { styleVariables } from "../../styles/globalStyleVariables";
+import { globalColours } from "../../styles/globalColourVariables";
 import Button from "../Button/Button";
 
 export default function MenuBar({ location }) {
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-    backgroundColor: styleVariables.lightGreyBackground
+    backgroundColor: globalColours.lightGreyBackground
   }
 });

@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { styleVariables } from "../../styles/globalStyleVariables";
+import { globalColours } from "../../styles/globalColourVariables";
 
 const screenWidth = Dimensions.get("window").width;
 const facilityWidth = (screenWidth - 48) / 2;
@@ -37,12 +37,12 @@ export const styles = StyleSheet.create({
     marginBottom: 15
   },
   refreshIcon: {
-    backgroundColor: styleVariables.backgroundColour
+    backgroundColor: globalColours.backgroundColour
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginTop: 20, 
-    paddingVertical: 10,
-  },
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginTop: 20,
+    paddingVertical: 10
+  }
 });
