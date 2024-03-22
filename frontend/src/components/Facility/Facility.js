@@ -3,8 +3,14 @@ import { View, Text, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./FacilityStyles";
 import { styleVariables } from "../../styles/globalStyleVariables";
-const Facility = ({ icon, name, onPress, onLongPress, isSelected, isDoubleSelected }) => {
-
+const Facility = ({
+  icon,
+  name,
+  onPress,
+  onLongPress,
+  isSelected,
+  isDoubleSelected
+}) => {
   return (
     <View style={styles.container}>
       <Pressable
@@ -14,10 +20,10 @@ const Facility = ({ icon, name, onPress, onLongPress, isSelected, isDoubleSelect
           styles.iconContainer,
           {
             backgroundColor: isDoubleSelected
-              ? styleVariables.doubleSelected
+              ? styleVariables.doubleSelectedIcon
               : pressed || isSelected
-                ? styleVariables.singleSelected
-                : styleVariables.unselected
+                ? styleVariables.singleSelectedIcon
+                : styleVariables.unselectedIcon
           }
         ]}
       >

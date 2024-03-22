@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
     height: "100%",
     paddingHorizontal: 13,
     paddingVertical: 13,
-    backgroundColor: styleVariables.greenBackground
+    backgroundColor: styleVariables.lightGreenBackground
   }
 });
