@@ -52,7 +52,8 @@ export default function App() {
         <Stack.Screen
           name="Facilities"
           component={FacilitySelectorScreen}
-          options={{ title: "Aura" }}
+          // options={{ title: "Aura" }}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
       <MenuBar location={location}></MenuBar>
