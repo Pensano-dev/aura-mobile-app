@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from "react-native";
 import { styleVariables } from "../../styles/globalStyleVariables";
 
 const screenWidth = Dimensions.get("window").width;
-const facilityWidth = (screenWidth - 48) / 3;
+const facilityWidth = (screenWidth - 48) / 2;
 
 export const styles = StyleSheet.create({
   formContainer: {
@@ -38,5 +38,11 @@ export const styles = StyleSheet.create({
   },
   refreshIcon: {
     backgroundColor: styleVariables.backgroundColour
-  }
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: 20, 
+    paddingVertical: 10,
+  },
 });
