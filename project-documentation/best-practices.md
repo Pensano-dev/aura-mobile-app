@@ -25,6 +25,10 @@
   - [E2E Tests](#e2e-tests)
 - [Code consistency](#code-consistency)
 - [VSCode Extensions](#vscode-extensions)
+- [Appendix](#appendix)
+  - [Code Examples](#code-examples)
+    - [Arrow functions](#arrow-functions)
+    - [Async and Await](#async-and-await)
 
 # File Structure
 
@@ -166,12 +170,83 @@ We use Puppeteer for end-to-end tests.
 
 # Code consistency
 
-- We use arrow functions for all functions, including React components, unless older style functions are specifically required, e.g. for hoisting.
-- We use `async` and `await` for asynchronous functions rather than promises.
+- We use arrow functions for all functions, including React components, unless older style functions are specifically required, e.g. for hoisting. See [an example](#arrow-functions).
+- We use `async` and `await` for asynchronous functions rather than promises. See [an example](#async-and-await).
 - We use `" "` double quotation marks instead of `' '` single quotation marks.
-- Function names (except React component function declarations) should be verbs, descriptive and follow camelCase. Favour readability over brevity.
-- Endpoint names should be descriptive and follow kebab-case.
+- Function names (except React component function declarations) should be verbs, descriptive and follow camelCase. Favour readability over brevity, e.g. `handleFormReset` or `getCafeById`.
+- Endpoint names should be descriptive and follow kebab-case, e.g. `api/v1.0/user/favourite-cafes`.
 
 # VSCode Extensions
 
 See the [Pensano recommended extensions](https://drive.google.com/file/d/1KNMCXaLJ6C_HvExO8RDWrYloQrE1EaTz/view?usp=sharing) PDF file.
+
+# Appendix
+
+## Code Examples
+
+### Arrow functions
+
+We use arrow functions, e.g. (from FacilityForm.js):
+```javascript
+const handleFormReset = () => {
+  setFacilities([]);
+};
+```
+
+rather than older style functions, e.g.:
+```javascript
+function handleFormReset() {
+  setFacilities([]);
+}
+```
+
+to [Code consistency](#code-consistency).
+
+### Async and Await
+
+We use `async` and `await` for asynchronous functions, e.g.:
+```javascript
+exports.getCafes = async (req, res, next) => {
+  const cafes = await Cafe.find();
+  res.status(200).json(cafes);
+};
+```
+
+rather than promises, e.g.:
+```javascript
+exports.getCafes = (req, res, next) => {
+  Cafe.find()
+    .then((cafes) => {
+      res.status(200).json(cafes);
+    })
+};
+```
+
+Or with error handling - Async and Await:
+```javascript
+exports.getCafes = async (req, res, next) => {
+  try {
+    const cafes = await Cafe.find();
+    res.status(200).json(cafes);
+  } catch (err) {
+    next(err);
+  }
+};
+```
+
+Promises:
+```javascript
+exports.getCafes = (req, res, next) => {
+  Cafe.find()
+    .then((cafes) => {
+      res.status(200).json(cafes);
+    })
+    .catch((err) => {
+      next(err);
+    });
+};
+```
+
+to [Code consistency](#code-consistency).
+
+
