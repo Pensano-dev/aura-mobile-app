@@ -29,6 +29,10 @@
   - [Code Examples](#code-examples)
     - [Arrow functions](#arrow-functions)
     - [Async and Await](#async-and-await)
+    - [Destructuring](#destructuring)
+      - [Destructuring React props](#destructuring-react-props)
+      - [Destructring StyleSheet styles](#destructring-stylesheet-styles)
+      - [Destructiong the request object in Express (req)](#destructiong-the-request-object-in-express-req)
 
 # File Structure
 
@@ -172,6 +176,7 @@ We use Puppeteer for end-to-end tests.
 
 - We use arrow functions for all functions, including React components, unless older style functions are specifically required, e.g. for hoisting. See [an example](#arrow-functions).
 - We use `async` and `await` for asynchronous functions rather than promises. See [an example](#async-and-await).
+- We desctrcuture objects where possible, e.g. `const { wantedFacilities, requiredFacilities } = req.params;`. See [more examples](#destructuring).
 - We use `" "` double quotation marks instead of `' '` single quotation marks.
 - Function names (except React component function declarations) should be verbs, descriptive and follow camelCase. Favour readability over brevity, e.g. `handleFormReset` or `getCafeById`.
 - Endpoint names should be descriptive and follow kebab-case, e.g. `api/v1.0/user/favourite-cafes`.
@@ -249,4 +254,106 @@ exports.getCafes = (req, res, next) => {
 
 to [Code consistency](#code-consistency).
 
+### Destructuring
 
+We use destructuring where possible. If you are not used to it, it can be a bit confusing at first, but it soon becomes normal practice and is essential to be able to understand other people's code.
+
+Desctructuring an object. Given the object:
+```javascript
+const tateModernCafe = {
+  name: 'Tate Modern Cafe',
+  location: 'Bankside, London',
+  facilities: ['WiFi', 'Vegan options', 'Outdoor seating'],
+};
+```
+
+You can destructure it like this:
+```javascript
+const { name, location, facilities } = tateModernCafe;
+```
+
+Which allows you to use the variables like this:
+```javascript
+console.log(name); // 'Tate Modern Cafe'
+console.log(location); // 'Bankside, London'
+console.log(facilities); // ['WiFi', 'Vegan options', 'Outdoor seating']
+```
+
+Without destructuring, you would have to use the object like this:
+```javascript
+console.log(tateModernCafe.name); // 'Tate Modern Cafe'
+console.log(tateModernCafe.location); // 'Bankside, London'
+console.log(tateModernCafe.facilities); // ['WiFi', 'Vegan options', 'Outdoor seating']
+```
+
+#### Destructuring React props
+
+In React, you can destructure props like this:
+```javascript
+const Facility = ({ icon, name, onPress, isSelected }) => { };
+```
+
+rather than:
+```javascript 
+const Facility = (props) => { };
+```
+
+With destructuring, you can use the variables directly, e.g. `icon`, `name`, `onPress`, `isSelected`, rather than `props.icon`, `props.name`, `props.onPress`, `props.isSelected`.
+
+#### Destructring StyleSheet styles
+
+In React Native, given this example StyleSheet for, e.g. Button.js:
+```javascript
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  text: {
+    fontSize: 20,
+  },
+});
+```
+
+ you can destructure and use the imported `styles` like this:
+```javascript
+import { styles } from './ButtonStyles';
+
+const Button = () => {
+  const { container, text } = styles;
+
+  return (
+    <View style={container}>
+      <Text style={text}>Press me</Text>
+    </View>
+  );
+};
+```
+
+Without destructuring, you would have to use the styles like this, referring to the imported `styles` object each time:
+```javascript
+import { styles } from './ButtonStyles';
+
+const Button = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Press me</Text>
+    </View>
+  );
+};
+```
+
+#### Destructiong the request object in Express (req)
+
+In Express controller functions, you can destructure the `req` object like this:
+```javascript
+exports.getCafes = async (req, res, next) => {
+  const { wantedFacilities, requiredFacilities, location, maxDistance } = req.params;
+  // ... the rest of the function
+};
+```
+
+Above the `params` part of the `req` object is destructured, so you can use the variables directly, e.g. `wantedFacilities`, `requiredFacilities`, `location`, `maxDistance`, rather than `req.params.wantedFacilities`, `req.params.requiredFacilities`, `req.params.location`, `req.params.maxDistance`.
+
+The exact same principle applies to destructuring the `body` part of the `req` object, e.g. `const { id, username, password } = req.body;`.
+
+to [Code consistency](#code-consistency).
