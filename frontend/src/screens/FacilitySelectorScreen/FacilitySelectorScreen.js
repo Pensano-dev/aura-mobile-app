@@ -1,7 +1,7 @@
 import React from "react";
 import FacilityForm from "../../components/FacilityForm/FacilityForm";
 import { View, Text, StyleSheet } from "react-native";
-import { styleVariables } from "../../styles/globalStyleVariables";
+import { globalColours } from "../../styles/globalColourVariables";
 
 const FacilitySelectorScreen = () => {
   return (
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
     height: "100%",
     paddingHorizontal: 13,
     paddingVertical: 13,
-    backgroundColor: styleVariables.greenBackground
+    backgroundColor: globalColours.lightGreenBackground
   }
 });
