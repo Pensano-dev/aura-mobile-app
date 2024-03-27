@@ -17,15 +17,17 @@ const app = express();
 
 app.use(cors());
 
-mongoose
-  .connect(mongoDbUrl)
-  .then(() => {
+const connectToDatabase = async () => {
+  try {
+    await mongoose.connect(mongoDbUrl);
     if (mode === "DEV") console.log(`🥳 Successfully connected to MongoDB Atlas ${dbName} database! 🌎`);
-  })
-  .catch((error) => {
+  } catch (error) {
     console.log(`😖 Unable to connect to MongoDB Atlas ${dbName} database! ❌`);
     console.error(error);
-  });
+  }
+}
+
+connectToDatabase();
 
 app.use(express.json());
 
