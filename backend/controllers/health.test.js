@@ -52,26 +52,26 @@ jest.mock("../models/healthModel", () => ({
 }));
 
 describe("getHealthEntry", () => {
-  it('should return health entry when status is "all is well"', async () => {
+  test('should return the specified health object and status 200', async () => {
     const mockHealthEntry = {
       status: "all is well"
     };
 
     Health.findOne.mockResolvedValue(mockHealthEntry);
 
-    const req = {};
-    const res = {
+    const mReq = {};
+    const mRes = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn()
     };
-    const next = jest.fn();
+    const mNext = jest.fn();
 
-    await getHealthEntry(req, res, next);
+    await getHealthEntry(mReq, mRes, mNext);
 
     expect(Health.findOne).toHaveBeenCalledWith({ status: "all is well" });
-    expect(res.status).toHaveBeenCalledWith(200);
-    expect(res.json).toHaveBeenCalledWith(mockHealthEntry);
-    expect(next).not.toHaveBeenCalled();
+    expect(mRes.status).toHaveBeenCalledWith(200);
+    expect(mRes.json).toHaveBeenCalledWith(mockHealthEntry);
+    expect(mNext).not.toHaveBeenCalled();
   });
 
   it("should call next middleware with error if findOne fails", async () => {
@@ -79,18 +79,18 @@ describe("getHealthEntry", () => {
 
     Health.findOne.mockRejectedValue(error);
 
-    const req = {};
-    const res = {
+    const mReq = {};
+    const mRes = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn()
     };
-    const next = jest.fn();
+    const mNext = jest.fn();
 
-    await getHealthEntry(req, res, next);
+    await getHealthEntry(mReq, mRes, mNext);
 
     expect(Health.findOne).toHaveBeenCalledWith({ status: "all is well" });
-    expect(next).toHaveBeenCalledWith(error);
-    expect(res.status).not.toHaveBeenCalled();
-    expect(res.json).not.toHaveBeenCalled();
+    expect(mNext).toHaveBeenCalledWith(error);
+    expect(mRes.status).not.toHaveBeenCalled();
+    expect(mRes.json).not.toHaveBeenCalled();
   });
 });
