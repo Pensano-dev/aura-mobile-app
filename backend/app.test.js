@@ -24,3 +24,4 @@ describe('App database health', () => {
     })
   })
 });
+

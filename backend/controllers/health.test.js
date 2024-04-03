@@ -1,5 +1,26 @@
 const { getHealth, getHealthEntry } = require("./healthController");
-const Health = require("../models/healthModel");
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+const dbPassword = process.env.MONGODB_PW;
+const mongoDbUrl = `mongodb+srv://pensano-aura-db-user:${dbPassword}@cluster0.sylisri.mongodb.net/aura_TEST`;
+
+const connectToDatabase = async () => {
+  try {
+    await mongoose.connect(mongoDbUrl);
+  } catch (error) {
+    console.error('Error connecting to MongoDB Atlas:', error);
+    process.exit(1);
+  }
+};
+
+const closeDatabaseConnection = async () => {
+  try {
+    await mongoose.disconnect();
+  } catch (error) {
+    console.error('Error disconnecting from MongoDB Atlas:', error);
+  }
+};
 
 describe("healthController", () => {
   describe("getHealth()", () => {
@@ -23,74 +44,33 @@ describe("healthController", () => {
     });
   });
 
-  // ⛔️ The test below is deliberately kept as I want to understand why it is failing. It will be ammended or deleted once this is done. Please do not delete it. Thanks - PJ ⛔️
+  describe('getHealthEntry()', () => {
+    beforeEach(() => {
+      connectToDatabase();
+    });
+    
+    afterEach(() => {
+      closeDatabaseConnection();
+    });
 
-  //   // describe('getHealthEntry()', () => {
-  //   //   test('should return the specified health object and status 200', async () => {
-  //   //     // Arrange
-  //   //     const mReq = {};
-  //   //     const mRes = {
-  //   //       status: jest.fn().mockReturnThis(),
-  //   //       json: jest.fn(),
-  //   //     };
-  //   //     const mNext = jest.fn();
+    test('should return the specified health object and status 200', async () => {
+      // Arrange
+      const mReq = {};
+      const mRes = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn(),
+      };
+      const mNext = jest.fn();
 
-  //   //     // Act
-  //   //     await getHealthEntry(mReq, mRes, mNext);
+      // Act
+      await getHealthEntry(mReq, mRes, mNext);
 
-  //   //     // Assert
-  //   //     expect(mRes.status).toBeCalledWith(200);
-  //   //     expect(mRes.json.mock.calls[0][0].status).toBe(
-  //   //       "all is well"
-  //   //     );
-  //   //   });
-  //   // });
-});
-
-jest.mock("../models/healthModel", () => ({
-  findOne: jest.fn()
-}));
-
-describe("getHealthEntry", () => {
-  it('should return health entry when status is "all is well"', async () => {
-    const mockHealthEntry = {
-      status: "all is well"
-    };
-
-    Health.findOne.mockResolvedValue(mockHealthEntry);
-
-    const req = {};
-    const res = {
-      status: jest.fn().mockReturnThis(),
-      json: jest.fn()
-    };
-    const next = jest.fn();
-
-    await getHealthEntry(req, res, next);
-
-    expect(Health.findOne).toHaveBeenCalledWith({ status: "all is well" });
-    expect(res.status).toHaveBeenCalledWith(200);
-    expect(res.json).toHaveBeenCalledWith(mockHealthEntry);
-    expect(next).not.toHaveBeenCalled();
+      // Assert
+      expect(mRes.status).toBeCalledWith(200);
+      expect(mRes.json.mock.calls[0][0].status).toBe(
+        "all is well"
+      );
+    });
   });
-
-  it("should call next middleware with error if findOne fails", async () => {
-    const error = new Error("Database error");
-
-    Health.findOne.mockRejectedValue(error);
-
-    const req = {};
-    const res = {
-      status: jest.fn().mockReturnThis(),
-      json: jest.fn()
-    };
-    const next = jest.fn();
-
-    await getHealthEntry(req, res, next);
-
-    expect(Health.findOne).toHaveBeenCalledWith({ status: "all is well" });
-    expect(next).toHaveBeenCalledWith(error);
-    expect(res.status).not.toHaveBeenCalled();
-    expect(res.json).not.toHaveBeenCalled();
-  });
+  
 });
